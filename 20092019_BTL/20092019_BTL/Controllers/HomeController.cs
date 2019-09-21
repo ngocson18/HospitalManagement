@@ -33,6 +33,12 @@ namespace _20092019_BTL.Controllers
         {
             return View();
         }
+        public IActionResult Login()
+        {
+            ViewData["Message"] = "Your Login Page";
+
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

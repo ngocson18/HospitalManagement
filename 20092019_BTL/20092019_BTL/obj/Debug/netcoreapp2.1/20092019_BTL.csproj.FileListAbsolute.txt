@@ -62,3 +62,4 @@ D:\TailieuHoctap\Net2\BTL\20092019_BTL\20092019_BTL\obj\Debug\netcoreapp2.1\2009
 D:\TailieuHoctap\Net2\BTL\20092019_BTL\20092019_BTL\obj\Debug\netcoreapp2.1\20092019_BTL.dll
 D:\TailieuHoctap\Net2\BTL\20092019_BTL\20092019_BTL\obj\Debug\netcoreapp2.1\20092019_BTL.pdb
 D:\TailieuHoctap\Net2\BTL\20092019_BTL\20092019_BTL\obj\Debug\netcoreapp2.1\20092019_BTL.csproj.CopyComplete
+D:\TailieuHoctap\Net2\BTL\20092019_BTL\20092019_BTL\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs

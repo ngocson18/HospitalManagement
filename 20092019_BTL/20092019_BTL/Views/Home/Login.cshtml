@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<form class="modal-content animate login" action="/action_page.php" method="post">
+    <div class="container login-content">
+        <div class="col-md-12">
+            <label for="uname"><b>Username</b></label><br />
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        </div>
+
+        <div class="col-md-12">
+            <label for="psw"><b>Password</b></label><br />
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
+        <div class="col-md-12"  style="text-align: center">
+            <button type="submit">Login</button> <br />
+        </div>
+        <div class="col-md-12">
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label> <br />
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </div>
+</form>
