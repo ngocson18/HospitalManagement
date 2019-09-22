@@ -2,25 +2,25 @@
     ViewData["Title"] = "Login";
 }
 
-<form class="modal-content animate login" action="/action_page.php" method="post">
-    <div class="container login-content">
-        <div class="col-md-12">
-            <label for="uname"><b>Username</b></label><br />
-            <input type="text" placeholder="Enter Username" name="uname" required>
-        </div>
-
-        <div class="col-md-12">
-            <label for="psw"><b>Password</b></label><br />
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        </div>
-        <div class="col-md-12"  style="text-align: center">
-            <button type="submit">Login</button> <br />
-        </div>
-        <div class="col-md-12">
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label> <br />
-            <span class="psw">Forgot <a href="#">password?</a></span>
+<div class="container h-80">
+    <div class="row align-items-center h-100">
+        <div class="col-3 mx-auto">
+            <div class="text-center">
+                <img id="profile-img" style="width: 40%" class="rounded-circle profile-img-card" src="https://i.imgur.com/6b6psnA.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" method="get">
+                    <input type="password" name="password" id="inputPassword" class="form-control form-group" placeholder="password" required autofocus><br />
+                    <div class="col-md-4">
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" style="width: 100%" type="submit">Đăng nhập</button>
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+                </form><!-- /form -->
+            </div>
         </div>
     </div>
-</form>
+</div>
