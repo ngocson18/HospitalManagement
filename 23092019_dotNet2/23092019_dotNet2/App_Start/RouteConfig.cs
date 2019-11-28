@@ -18,6 +18,30 @@ namespace _23092019_dotNet2
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Login",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Register",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Register", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Forgotpassword",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "ForgotPassword", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "CustomerList",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "CustomerList", id = UrlParameter.Optional }
+            );
         }
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="000c59a5496c45b6ac7ff89a7313501b" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.sysdiagram" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_Customer" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_CustomerBooking" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_Group" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_MedicalBill" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_Office" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_Payment" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_Product" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_ProductCategory" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_ServiceUnit" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_Specialize" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Hospital_ManagementModel.tbl_User" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_MedicalBill_tbl_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_MedicalBill_tbl_Customer1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_MedicalBill_tbl_Customer2" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_MedicalBill" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_MedicalBill1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_Office" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_Office1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_ServiceUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_CustomerBooking_tbl_ServiceUnit1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_User_tbl_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_User_tbl_Group1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_Payment_tbl_MedicalBill" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Hospital_ManagementModel.FK_tbl_Product_tbl_ProductCategory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -13,24 +13,23 @@ namespace _23092019_dotNet2.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         public ActionResult Login()
         {
-            ViewBag.Message = "Your login page.";
+            return View();
+        }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        public ActionResult CustomerList()
+        {
             return View();
         }
     }
