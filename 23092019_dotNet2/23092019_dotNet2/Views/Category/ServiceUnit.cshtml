@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "ServiceUnit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 serviceUnit_list">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>DANH SÁCH DỊCH VỤ</h4>
+            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên dịch vụ</th>
+                        <th>Giá(VNĐ)</th>
+                        <th>Giá(USD)</th>
+                        <th>Ghi chú</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="">
+                            Khám thai
+                        </td>
+                        <td>
+                            45.000.000
+                        </td>
+                        <td>
+                            2000
+                        </td>
+                        <td>
+                            Đây là ghi chú
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-success">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-danger">
+                                <i class="fas fa-power-off"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

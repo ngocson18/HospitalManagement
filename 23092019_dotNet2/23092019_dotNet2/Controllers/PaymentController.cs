@@ -6,24 +6,20 @@ using System.Web.Mvc;
 
 namespace _23092019_dotNet2.Controllers
 {
-    public class HomeController : Controller
+    public class PaymentController : Controller
     {
+        // GET: Payment
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult PaymentProfile()
         {
             return View();
         }
 
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        public ActionResult ForgotPassword()
+        public ActionResult DebtList()
         {
             return View();
         }

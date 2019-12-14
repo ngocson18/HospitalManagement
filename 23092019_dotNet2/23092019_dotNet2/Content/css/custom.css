@@ -4,4 +4,71 @@
  * because it will make it harder for you to update.
  * 
  */
+.body-content {
+    width: 100%;
+}
+table th,
+table td {
+    text-align: center;
+}
+.doctor_list .button-custom,
+.payment_profile .button-custom,
+.category_products .button-custom,
+.buy_products .button-custom,
+.products_list .button-custom,
+.sell_products .button-custom,
+.schedule_list .button-custom,
+.miss_list .button-custom,
+.done_list .button-custom,
+.speciality_list .button-custom,
+.serviceUnit_list .button-custom,
+.office_list .button-custom,
+.doctor_list .button-custom,
+.user_list .button-custom,
+.customer_list .button-custom,
+.user_group .button-custom {
+    border-radius: 40px;
+}
+
+/* Style tab links */
+.report .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+    .report .tablink:hover {
+        background-color: #777;
+    }
+
+/* Style the tab content (and add height:100% for full page content) */
+.report .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+.report #Day {
+    background-color: red;
+}
+
+.report #Month {
+    background-color: green;
+}
+
+.report #Doctor {
+    background-color: blue;
+}
+
+.report #Time {
+    background-color: orange;
+}
+
 

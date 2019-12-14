@@ -129,7 +129,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MedicalController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RevenueController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3337,7 +3343,24 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
-    <Content Include="Views\Home\CustomerList.cshtml" />
+    <Content Include="Views\Medical\CustomerList.cshtml" />
+    <Content Include="Views\User\UserGroup.cshtml" />
+    <Content Include="Views\User\UserList.cshtml" />
+    <Content Include="Views\User\DoctorList.cshtml" />
+    <Content Include="Views\Category\Office.cshtml" />
+    <Content Include="Views\Category\ServiceUnit.cshtml" />
+    <Content Include="Views\Category\Speciality.cshtml" />
+    <Content Include="Views\Medical\DoneList.cshtml" />
+    <Content Include="Views\Medical\MissList.cshtml" />
+    <Content Include="Views\Medical\ScheduleList.cshtml" />
+    <Content Include="Views\Medical\TreatmentList.cshtml" />
+    <Content Include="Views\Payment\PaymentProfile.cshtml" />
+    <Content Include="Views\Payment\DebtList.cshtml" />
+    <Content Include="Views\Products\CategoryProducts.cshtml" />
+    <Content Include="Views\Products\ProductsList.cshtml" />
+    <Content Include="Views\Products\BuyProducts.cshtml" />
+    <Content Include="Views\Products\SellProducts.cshtml" />
+    <Content Include="Views\Revenue\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

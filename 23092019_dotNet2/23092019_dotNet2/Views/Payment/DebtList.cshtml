@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "DebtList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 debt_list">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>DANH SÁCH HANG NỢ PHÍ</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên KH</th>
+                        <th>SĐT</th>
+                        <th>Bác sĩ</th>
+                        <th>Chi phí</th>
+                        <th>Đã nộp</th>
+                        <th>Còn nợ</th>
+                        <th>HTTT</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="">
+                            Nguyễn Ngọc Sơn
+                        </td>
+                        <td>
+                            <div class="">0985796921</div>
+                        </td>
+                        <td>
+                            Thúy Vân
+                        </td>
+                        <td>
+                            750.000.000
+                        </td>
+                        <td>
+                            20.000.000
+                        </td>
+                        <td>
+                            730.000.000
+                        </td>
+                        <td>
+                            Chuyển khoản
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

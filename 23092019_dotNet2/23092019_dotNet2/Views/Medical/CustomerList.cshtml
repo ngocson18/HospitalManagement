@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 customer_list">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>Danh sách khách hàng</h4>
+            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        @*<th class="text-center">
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
+                                           class="custom-control-input" id="checkbox-all">
+                                    <label for="checkbox-all" class="custom-control-label"></label>
+                                </div>
+                            </th>*@
+                        <th>STT</th>
+                        <th>Tên KH</th>
+                        <th>Ngày sinh</th>
+                        <th>GT</th>
+                        <th>SĐT</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="">
+                            @*<div class="progress" style="height: 10px;" data-toggle="tooltip" title="100%">
+                                    <div class="progress-bar bg-success" style="width: 100%;"></div>
+                                </div>*@
+                            Nguyễn Ngọc Sơn
+                        </td>
+                        <td>
+                            @*<img alt="image" src="~/Content/img/avatar/avatar-5.jpeg" class="rounded-circle" width="35"
+                                data-toggle="title" title="Wildan Ahdian">*@
+                            18/07/1998
+                        </td>
+                        <td style="width: 20px">Nam</td>
+                        <td>
+                            @*<div class="badge badge-success">0985796921</div>*@
+                            <div class="">0985796921</div>
+                        </td>
+                        <td>
+                            <div class="">Thanh Sơn, Kim Bảng, Hà Nam</div>
+                        </td>
+                        @*<td><a href="#" class="btn btn-action btn-secondary">Detail</a></td>*@
+                        <td><a href="#" class="">ngocsonxx98@gmail.com</a></td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-calendar-alt"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-12 report">
+
+    <div class="card-header mb-5">
+        <div class="float-right">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <h5>Thống kê doanh thu</h5>
+    </div>
+    <button class="tablink" onclick="openPage('Day', this, 'red')">Theo ngày</button>
+    <button class="tablink" onclick="openPage('Month', this, 'green')" id="defaultOpen">Theo tháng</button>
+    <button class="tablink" onclick="openPage('Doctor', this, 'blue')">Theo bác sĩ</button>
+    <button class="tablink" onclick="openPage('Time', this, 'orange')">Theo thời gian</button>
+
+    <div id="Day" class="tabcontent">
+        Thống kê theo ngày
+    </div>
+
+    <div id="Month" class="tabcontent">
+        Thống kê theo tháng
+    </div>
+
+    <div id="Doctor" class="tabcontent">
+        Thống kê theo bác sĩ
+    </div>
+
+    <div id="Time" class="tabcontent">
+        Thống kể theo thời gian
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+</div>

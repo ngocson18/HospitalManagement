@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "SellProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 sell_products">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>XUẤT SẢN PHẨM</h4>
+            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>STT</th>
+                        <th>Ngày xuất</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá nhập</th>
+                        <th>Giá xuất</th>
+                        <th>SL</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            23/12/2019
+                        </td>
+                        <td>
+                            Băng gạc
+                        </td>
+                        <td>
+                            540.000
+                        </td>
+                        <td>
+                            1.000.000
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-success">Mới
+                            </button>
+                            <button type="button" class="button-custom btn btn-danger">Đã duyệt
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

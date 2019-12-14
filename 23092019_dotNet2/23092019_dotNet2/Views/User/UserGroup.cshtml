@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "UserGroup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 user_group">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>Danh sách nhóm người dùng</h4>
+            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>STT</th>
+                        <th>Nhóm người dùng</th>
+                        <th>Mô tả</th>
+                        <th>Người tạo</th>
+                        <th>Thời gian tạo</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="">
+                            Bác sĩ
+                        </td>
+                        <td>
+                            Đây là bác sĩ
+                        </td>
+                        <td style="">Ai đó</td>
+                        <td>
+                            17:35 - 29/10/2019
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-success">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-danger">
+                                <i class="fas fa-power-off"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button type="button" class="button-custom btn btn-info">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
