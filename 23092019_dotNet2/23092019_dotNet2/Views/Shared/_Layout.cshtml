@@ -136,7 +136,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li>
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-nutrition"></i>Quản lý sản phẩm</a>
                             <ul class="menu-dropdown">
@@ -246,6 +245,7 @@
                         </div>
                     </div>
                 </section>
+                @RenderSection("Modal_AddGroupUser", required: false)
             </div>
         </div>
 
@@ -261,13 +261,6 @@
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
     *@
-    @*<script>
-        a = document.getElementsByClassName("sidebar-gone");
-        if (a) {
-            var x = document.getElementById("main-content");
-            x.style.marginLeft = "-275px";
-        }
-    </script>*@
     <script src="~/Content/modules/jquery.min.js"></script>
     <script src="~/Content/modules/popper.js"></script>
     <script src="~/Content/modules/tooltip.js"></script>
