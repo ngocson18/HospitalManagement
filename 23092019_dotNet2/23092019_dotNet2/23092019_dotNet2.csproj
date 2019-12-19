@@ -139,58 +139,59 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HMDB.Context.cs">
+    <Compile Include="Models\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HMDB.Context.tt</DependentUpon>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="HMDB.cs">
+    <Compile Include="Models\DBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HMDB.tt</DependentUpon>
+      <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HMDB.Designer.cs">
+    <Compile Include="Models\DBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HMDB.edmx</DependentUpon>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GroupUser.cs" />
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Customer.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_CustomerBooking.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Group.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_MedicalBill.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Office.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Payment.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Product.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_ProductCategory.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_ServiceUnit.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Specialize.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_User.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Customer.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_CustomerBooking.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Group.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_MedicalBill.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Office.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Payment.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Product.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_ProductCategory.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_ServiceUnit.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Specialize.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_User.cs">
-      <DependentUpon>HMDB.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\custom.css" />
@@ -3202,15 +3203,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="HMDB.Context.tt">
+    <Content Include="Models\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HMDB.edmx</DependentUpon>
-      <LastGenOutput>HMDB.Context.cs</LastGenOutput>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="HMDB.tt">
+    <Content Include="Models\DBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HMDB.edmx</DependentUpon>
-      <LastGenOutput>HMDB.cs</LastGenOutput>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3308,12 +3309,12 @@
     <Content Include="Content\modules\toastr\LICENSE" />
     <Content Include="Content\modules\toastr\toastr.less" />
     <Content Include="Content\modules\toastr\toastr.scss" />
-    <EntityDeploy Include="HMDB.edmx">
+    <EntityDeploy Include="Models\DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HMDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="HMDB.edmx.diagram">
-      <DependentUpon>HMDB.edmx</DependentUpon>
+    <Content Include="Models\DBModel.edmx.diagram">
+      <DependentUpon>DBModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -3364,7 +3365,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

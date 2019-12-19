@@ -1,4 +1,6 @@
-﻿
+﻿@*@model _23092019_dotNet2.Models.GroupUser*@
+@model IEnumerable<_23092019_dotNet2.Models.GroupUser>
+
 @{
     ViewBag.Title = "UserGroup";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -28,43 +30,62 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                     <tr>
-                        <th>STT</th>
-                        <th>Nhóm người dùng</th>
-                        <th>Mô tả</th>
+                        <th>
+                            STT
+                        </th>
+                        <th>
+                            Nhóm
+                        </th>
+                        <th>
+                            Mô tả
+                        </th>
                         <th>Người tạo</th>
                         <th>Thời gian tạo</th>
-                        <th>Trạng thái</th>
+                        <th>
+                            Trạng thái
+                        </th>
                         <th>Thao tác</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="">
-                            Bác sĩ
-                        </td>
-                        <td>
-                            Đây là bác sĩ
-                        </td>
-                        <td style="">Ai đó</td>
-                        <td>
-                            17:35 - 29/10/2019
-                        </td>
-                        <td>
-                            <button type="button" class="button-custom btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="button" class="button-custom btn btn-danger">
-                                <i class="fas fa-power-off"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button type="button" class="button-custom btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button type="button" class="button-custom btn btn-info">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach (var group in Model)
+                    {
+                     <tr>
+                            <td>@group.id</td>
+                            <td class="">
+                                @group.name
+                            </td>
+                            <td>
+                                @group.description
+                            </td>
+                            <td style="">
+                            </td>
+                            <td>
+                                17:35 - 29/10/2019
+                            </td>
+                            <td>
+                                @{ var a = group.status;}
+                                @if (a == "1")
+                                {
+                                    <button type="button" class="button-custom btn btn-success">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                }
+                                @if (a == "0")
+                                {
+                                    <button type="button" class="button-custom btn btn-danger">
+                                        <i class="fas fa-power-off"></i>
+                                    </button>
+                                }
+                            </td>
+                            <td>
+                                <button type="button" class="button-custom btn btn-info">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" class="button-custom btn btn-info">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                     </tr>
+                     }
                 </table>
             </div>
         </div>

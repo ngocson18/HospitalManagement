@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _23092019_dotNet2
+namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB_Hospital_ManagementEntities : DbContext
+    public partial class DBModel : DbContext
     {
-        public DB_Hospital_ManagementEntities()
-            : base("name=DB_Hospital_ManagementEntities")
+        public DBModel()
+            : base("name=DBModel")
         {
         }
     

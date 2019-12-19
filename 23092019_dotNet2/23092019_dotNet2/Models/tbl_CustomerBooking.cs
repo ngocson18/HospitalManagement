@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _23092019_dotNet2
+namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;

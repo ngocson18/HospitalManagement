@@ -7,28 +7,37 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _23092019_dotNet2
+namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_ProductCategory
+    public partial class tbl_ServiceUnit
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_ProductCategory()
+        public tbl_ServiceUnit()
         {
-            this.tbl_Product = new HashSet<tbl_Product>();
+            this.tbl_CustomerBooking = new HashSet<tbl_CustomerBooking>();
+            this.tbl_CustomerBooking1 = new HashSet<tbl_CustomerBooking>();
         }
     
         public short id { get; set; }
         public string name { get; set; }
-        public string description { get; set; }
-        public Nullable<System.DateTime> createTime { get; set; }
+        public Nullable<decimal> priceVND { get; set; }
+        public Nullable<decimal> priceUSD { get; set; }
+        public string note { get; set; }
+        public Nullable<decimal> minPrice { get; set; }
+        public Nullable<decimal> maxPrice { get; set; }
+        public string picture { get; set; }
+        public Nullable<int> status { get; set; }
+        public Nullable<System.DateTime> createdTime { get; set; }
         public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_Product> tbl_Product { get; set; }
+        public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking1 { get; set; }
     }
 }

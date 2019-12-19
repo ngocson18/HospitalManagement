@@ -7,32 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _23092019_dotNet2
+namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_Group
+    public partial class tbl_Specialize
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_Group()
-        {
-            this.tbl_User = new HashSet<tbl_User>();
-            this.tbl_User1 = new HashSet<tbl_User>();
-        }
-    
         public short id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> createdTime { get; set; }
-        public Nullable<System.DateTime> updatedTime { get; set; }
+        public Nullable<System.DateTime> updatedtime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_User> tbl_User { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_User> tbl_User1 { get; set; }
     }
 }

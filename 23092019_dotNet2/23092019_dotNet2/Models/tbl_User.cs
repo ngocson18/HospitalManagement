@@ -7,20 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _23092019_dotNet2
+namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_Specialize
+    public partial class tbl_User
     {
         public short id { get; set; }
         public string name { get; set; }
-        public string description { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public Nullable<System.DateTime> dob { get; set; }
+        public Nullable<short> departmentId { get; set; }
+        public Nullable<int> gender { get; set; }
+        public string phone { get; set; }
+        public string groupId { get; set; }
+        public string groupName { get; set; }
+        public string email { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> createdTime { get; set; }
-        public Nullable<System.DateTime> updatedtime { get; set; }
+        public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }
+    
+        public virtual tbl_Group tbl_Group { get; set; }
+        public virtual tbl_Group tbl_Group1 { get; set; }
     }
 }

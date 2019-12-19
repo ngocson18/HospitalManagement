@@ -7,54 +7,51 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _23092019_dotNet2
+namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_MedicalBill
+    public partial class tbl_Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_MedicalBill()
+        public tbl_Customer()
         {
-            this.tbl_CustomerBooking = new HashSet<tbl_CustomerBooking>();
-            this.tbl_CustomerBooking1 = new HashSet<tbl_CustomerBooking>();
-            this.tbl_Payment = new HashSet<tbl_Payment>();
+            this.tbl_MedicalBill = new HashSet<tbl_MedicalBill>();
+            this.tbl_MedicalBill1 = new HashSet<tbl_MedicalBill>();
+            this.tbl_MedicalBill2 = new HashSet<tbl_MedicalBill>();
         }
     
         public short id { get; set; }
-        public string billCode { get; set; }
-        public Nullable<short> customerId { get; set; }
-        public string customerName { get; set; }
-        public string customerPhone { get; set; }
-        public Nullable<System.DateTime> customerDOB { get; set; }
-        public Nullable<int> customerGender { get; set; }
-        public string services { get; set; }
-        public Nullable<short> doctorId { get; set; }
-        public string doctorName { get; set; }
+        public string name { get; set; }
+        public Nullable<System.DateTime> dob { get; set; }
+        public Nullable<int> gender { get; set; }
+        public string phone { get; set; }
+        public string userName { get; set; }
+        public Nullable<short> userId { get; set; }
+        public string avatar { get; set; }
+        public string facebook { get; set; }
+        public Nullable<short> customerType { get; set; }
+        public Nullable<short> serviceUnitId { get; set; }
+        public string serviceUnitName { get; set; }
+        public Nullable<short> quantity { get; set; }
         public Nullable<System.DateTime> bookingDate { get; set; }
         public Nullable<System.DateTime> comingDate { get; set; }
-        public Nullable<decimal> totalFee { get; set; }
-        public Nullable<decimal> paid { get; set; }
-        public Nullable<decimal> debt { get; set; }
+        public Nullable<System.DateTime> reappointmentDate { get; set; }
+        public string doctor { get; set; }
         public Nullable<short> officeId { get; set; }
         public string officeName { get; set; }
-        public Nullable<short> discountPercent { get; set; }
-        public Nullable<decimal> discountMoney { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> createdTime { get; set; }
         public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }
     
-        public virtual tbl_Customer tbl_Customer { get; set; }
-        public virtual tbl_Customer tbl_Customer1 { get; set; }
-        public virtual tbl_Customer tbl_Customer2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking { get; set; }
+        public virtual ICollection<tbl_MedicalBill> tbl_MedicalBill { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking1 { get; set; }
+        public virtual ICollection<tbl_MedicalBill> tbl_MedicalBill1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_Payment> tbl_Payment { get; set; }
+        public virtual ICollection<tbl_MedicalBill> tbl_MedicalBill2 { get; set; }
     }
 }

@@ -932,7 +932,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB_Hospital_ManagementEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
           <EntitySet Name="tbl_CustomerBooking" EntityType="Self.tbl_CustomerBooking" />
@@ -1011,7 +1011,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB_Hospital_ManagementModelStoreContainer" CdmEntityContainer="DB_Hospital_ManagementEntities">
+        <EntityContainerMapping StorageEntityContainer="DB_Hospital_ManagementModelStoreContainer" CdmEntityContainer="DBModel">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DB_Hospital_ManagementModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
