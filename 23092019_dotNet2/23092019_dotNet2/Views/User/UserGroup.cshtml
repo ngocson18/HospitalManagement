@@ -1,5 +1,5 @@
-﻿@*@model _23092019_dotNet2.Models.GroupUser*@
-@model IEnumerable<_23092019_dotNet2.Models.GroupUser>
+﻿@model  System.Data.DataTable
+using System.Data;
 
 @{
     ViewBag.Title = "UserGroup";
@@ -45,47 +45,29 @@
                             Trạng thái
                         </th>
                         <th>Thao tác</th>
+                        @*@foreach (System.Data.DataColumn col in Model.Columns)
+                        {
+                            <th>@col.Caption</th>
+                        }*@
                     </tr>
-                    @foreach (var group in Model)
+                    @foreach (System.Data.DataRow row in Model.Rows)
                     {
-                     <tr>
-                            <td>@group.id</td>
-                            <td class="">
-                                @group.name
-                            </td>
-                            <td>
-                                @group.description
-                            </td>
-                            <td style="">
-                            </td>
-                            <td>
-                                17:35 - 29/10/2019
-                            </td>
-                            <td>
-                                @{ var a = group.status;}
-                                @if (a == "1")
-                                {
-                                    <button type="button" class="button-custom btn btn-success">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                }
-                                @if (a == "0")
-                                {
-                                    <button type="button" class="button-custom btn btn-danger">
-                                        <i class="fas fa-power-off"></i>
-                                    </button>
-                                }
-                            </td>
-                            <td>
-                                <button type="button" class="button-custom btn btn-info">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button type="button" class="button-custom btn btn-info">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                     </tr>
-                     }
+                    <tr>
+                        @foreach (var cell in row.ItemArray)
+                        {
+                            if (cell != null)
+                            {
+                                <td>
+                                    @cell.ToString()
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                    }
                 </table>
             </div>
         </div>
@@ -101,7 +83,7 @@
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h6 class="modal-title">Thêm nhóm</h6>
-                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <button type="button" class="close" data-dismiss="modal">x</button>
                     </div>
 
                     <!-- Modal body -->
