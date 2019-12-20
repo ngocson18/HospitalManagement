@@ -139,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConnectDB.cs" />
     <Compile Include="Models\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,11 +192,13 @@
     <Compile Include="Models\tbl_User.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\custom.css" />
     <Content Include="Content\css\demo.css" />
+    <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\skins\blue.css" />
     <Content Include="Content\css\skins\darksidebar.css" />
     <Content Include="Content\css\skins\deeppurple.css" />
@@ -3200,6 +3203,9 @@
     <Content Include="Content\modules\toastr\toastr-icon.png" />
     <Content Include="Content\modules\toastr\toastr.js" />
     <Content Include="Content\modules\tooltip.js" />
+    <Content Include="Content\web\css\font-awesome.css" />
+    <Content Include="Content\web\css\style.css" />
+    <Content Include="Content\web\images\bg.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -3316,6 +3322,11 @@
     <Content Include="Models\DBModel.edmx.diagram">
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\web\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\web\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

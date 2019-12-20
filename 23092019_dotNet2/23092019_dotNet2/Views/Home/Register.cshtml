@@ -1,4 +1,5 @@
-﻿@{
+﻿@model _23092019_dotNet2.Models.tbl_User
+@{
     Layout = null;
 }
 
@@ -30,26 +31,62 @@
                             <div class="card-header">
                                 <h4>Đăng kí</h4>
                             </div>
-
                             <div class="card-body">
                                 <form method="POST">
                                     <div class="row">
-                                        <div class="form-group col-12">
-                                            <label for="frist_name">Tên đăng nhập</label>
-                                            <input id="frist_name" type="text" class="form-control" name="frist_name" autofocus>
+                                        <div class="form-group col-6">
+                                            <label for="name">Họ tên</label>
+                                            <input id="name" type="text" class="form-control" name="name">
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-6">
+                                            <label for="phone">SĐT</label>
+                                            <input id="phone" type="text" class="form-control" name="phone">
+                                            <div class="invalid-feedback">
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email">
-                                        <div class="invalid-feedback">
+                                    <div class="row">
+                                        <div class="form-group col-4">
+                                            <label for="username">Tên đăng nhập</label>
+                                            <input id="username" type="text" class="form-control" name="username" autofocus>
+                                        </div>
+                                        <div class="form-group  col-4">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="email" class="form-control" name="email">
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                        <div class="form-group  col-4">
+                                            <label for="gender">Giới tính</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                <option>1</option>
+                                                <option>0</option>
+                                                <option>3</option>
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="form-group col-6">
-                                            <label for="password" class="d-block">Mật khảu</label>
+                                            <label for="dob" class="d-block">Ngày sinh</label>
+                                            <input id="dob" type="date" class="form-control" name="dob">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="groupId" class="d-block">Nhóm</label>
+                                            <select class="form-control" id="groupId">
+                                                <option>1</option>
+                                                <option>0</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <label for="password" class="d-block">Mật khẩu</label>
                                             <input id="password" type="password" class="form-control" name="password">
                                         </div>
                                         <div class="form-group col-6">

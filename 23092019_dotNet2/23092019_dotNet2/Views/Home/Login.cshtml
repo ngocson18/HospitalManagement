@@ -1,96 +1,87 @@
-﻿@{
+﻿@model _23092019_dotNet2.Models.User
+@{
     Layout = null;
 }
-
 @{
     ViewBag.Title = "Login";
 }
-
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="~/Content/modules/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/Content/modules/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="~/Content/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Spin Login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    <link rel="stylesheet" href="~/Content/css/demo.css">
-    <link rel="stylesheet" href="~/Content/css/style.css">
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/Content/web/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 </head>
 
 <body>
-    <div id="app">
-        <section class="section">
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-                        <div class="login-brand">
-                            HM
-                        </div>
+    <div class="clear-loading spinner">
+        <span></span>
+    </div>
+    <div class="w3ls-login box box--big">
+        <!-- form starts here -->
+        <form action="Verify" method="post">
+            <div class="agile-field-txt">
+                <label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
+                <input type="text" name="username" placeholder="Enter User Name" required="" />
+            </div>
+            <div class="agile-field-txt">
+                <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
+                <input type="password" name="password" placeholder="Enter Password" required="" id="myInput" />
+                <div class="agile_label">
+                    <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+                    <label class="check" for="check3">Show password</label>
+                </div>
+                <div class="agile-right">
+                    <a href="~/Home/ForgotPassword">forgot password?</a>
+                </div>
 
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h4>Đăng nhập</h4>
-                            </div>
-
-                            <div class="card-body">
-                                <form method="POST" action="#" class="needs-validation" novalidate="">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                                        <div class="invalid-feedback">
-                                            Hãy nhập Email
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="password" class="d-block">
-                                            Mật khẩu
-                                            <div class="float-right">
-                                                <a href="~/Home/ForgotPassword">
-                                                    Quên mật khẩu?
-                                                </a>
-                                            </div>
-                                        </label>
-                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                                        <div class="invalid-feedback">
-                                            Nhập mật khẩu
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                                            <label class="custom-control-label" for="remember-me">Remember Me</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-block" tabindex="4">
-                                            Đăng nhập
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="mt-5 text-muted text-center">
-                            Bạn không có tài khoản? <a href="~/Home/Register">Tạo tài khoản</a>
-                        </div>
-                    </div>
+                <div class="agile-right">
+                    <a href="~/Home/Register">Đăng kí</a>
                 </div>
             </div>
-        </section>
+            <!-- script for show password -->
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myInput");
+                    if (x.type === "password") {
+                        x.type = "text";
+                    } else {
+                        x.type = "password";
+                    }
+                }
+            </script>
+            <!-- //end script -->
+            <input type="submit" value="LOGIN">
+        </form>
+    </div>
+    <div class="copy-wthree">
+        <p>
+            © 2018. All Rights Reserved | Design by AECK
+        </p>
     </div>
 
-    <script src="~/Content/modules/jquery.min.js"></script>
-    <script src="~/Content/modules/popper.js"></script>
-    <script src="~/Content/modules/tooltip.js"></script>
-    <script src="~/Content/modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/Content/modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="~/Content/modules/moment.min.js"></script>
-    <script src="~/Content/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
-    <script src="~/Content/js/sa-functions.js"></script>
+<script src="~/Content/modules/jquery.min.js"></script>
+<script src="~/Content/modules/popper.js"></script>
+<script src="~/Content/modules/tooltip.js"></script>
+<script src="~/Content/modules/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Content/modules/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="~/Content/modules/moment.min.js"></script>
+<script src="~/Content/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+<script src="~/Content/js/sa-functions.js"></script>
 
-    <script src="~/Content/js/scripts.js"></script>
-    <script src="~/Content/js/custom.js"></script>
-    <script src="~/Content/js/demo.js"></script>
+<script src="~/Content/js/scripts.js"></script>
+<script src="~/Content/js/custom.js"></script>
+<script src="~/Content/js/demo.js"></script>
 </body>
 

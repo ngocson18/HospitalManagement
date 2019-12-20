@@ -21,8 +21,8 @@ namespace _23092019_dotNet2
 
             routes.MapRoute(
                 name: "Login",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Login"}
             );
 
             routes.MapRoute(
@@ -35,12 +35,6 @@ namespace _23092019_dotNet2
                 name: "Forgotpassword",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "ForgotPassword", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "CustomerList",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "CustomerList", id = UrlParameter.Optional }
             );
         }
     }
