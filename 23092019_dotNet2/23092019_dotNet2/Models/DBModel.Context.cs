@@ -13,10 +13,10 @@ namespace _23092019_dotNet2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBModel : DbContext
+    public partial class DB_Hospital : DbContext
     {
-        public DBModel()
-            : base("name=DBModel")
+        public DB_Hospital()
+            : base("name=DB_Hospital")
         {
         }
     
@@ -25,6 +25,7 @@ namespace _23092019_dotNet2.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tbl_Customer> tbl_Customer { get; set; }
         public virtual DbSet<tbl_CustomerBooking> tbl_CustomerBooking { get; set; }

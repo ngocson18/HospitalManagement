@@ -129,17 +129,29 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MedicalController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\RevenueController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\tbl_CustomerController.cs" />
+    <Compile Include="Controllers\tbl_DebtController.cs" />
+    <Compile Include="Controllers\tbl_DoctorController.cs" />
+    <Compile Include="Controllers\tbl_DoneController.cs" />
+    <Compile Include="Controllers\tbl_GroupController.cs" />
+    <Compile Include="Controllers\tbl_MissController.cs" />
+    <Compile Include="Controllers\tbl_OfficeController.cs" />
+    <Compile Include="Controllers\tbl_PaymentController.cs" />
+    <Compile Include="Controllers\tbl_ProductCategoryController.cs" />
+    <Compile Include="Controllers\tbl_ProductController.cs" />
+    <Compile Include="Controllers\tbl_ScheduleController.cs" />
+    <Compile Include="Controllers\tbl_ServiceUnitController.cs" />
+    <Compile Include="Controllers\tbl_SpecializeController.cs" />
+    <Compile Include="Controllers\tbl_TreatmentController.cs" />
+    <Compile Include="Controllers\tbl_UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ConnectDB.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +168,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\GroupUser.cs" />
+    <Compile Include="Models\ServiceUnitModel.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -3315,6 +3328,11 @@
     <Content Include="Content\modules\toastr\LICENSE" />
     <Content Include="Content\modules\toastr\toastr.less" />
     <Content Include="Content\modules\toastr\toastr.scss" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\web\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\web\fonts\FontAwesome.otf" />
     <EntityDeploy Include="Models\DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
@@ -3322,11 +3340,7 @@
     <Content Include="Models\DBModel.edmx.diagram">
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\web\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\web\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\web\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\web\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\web\fonts\FontAwesome.otf" />
+    <Content Include="Models\status.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3355,17 +3369,6 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
-    <Content Include="Views\Medical\CustomerList.cshtml" />
-    <Content Include="Views\User\UserGroup.cshtml" />
-    <Content Include="Views\User\UserList.cshtml" />
-    <Content Include="Views\User\DoctorList.cshtml" />
-    <Content Include="Views\Category\Office.cshtml" />
-    <Content Include="Views\Category\ServiceUnit.cshtml" />
-    <Content Include="Views\Category\Speciality.cshtml" />
-    <Content Include="Views\Medical\DoneList.cshtml" />
-    <Content Include="Views\Medical\MissList.cshtml" />
-    <Content Include="Views\Medical\ScheduleList.cshtml" />
-    <Content Include="Views\Medical\TreatmentList.cshtml" />
     <Content Include="Views\Payment\PaymentProfile.cshtml" />
     <Content Include="Views\Payment\DebtList.cshtml" />
     <Content Include="Views\Products\CategoryProducts.cshtml" />
@@ -3373,6 +3376,81 @@
     <Content Include="Views\Products\BuyProducts.cshtml" />
     <Content Include="Views\Products\SellProducts.cshtml" />
     <Content Include="Views\Revenue\Report.cshtml" />
+    <Content Include="Views\tbl_Group\Create.cshtml" />
+    <Content Include="Views\tbl_Group\Delete.cshtml" />
+    <Content Include="Views\tbl_Group\Details.cshtml" />
+    <Content Include="Views\tbl_Group\Edit.cshtml" />
+    <Content Include="Views\tbl_Group\Index.cshtml" />
+    <Content Include="Views\tbl_User\Create.cshtml" />
+    <Content Include="Views\tbl_User\Delete.cshtml" />
+    <Content Include="Views\tbl_User\Details.cshtml" />
+    <Content Include="Views\tbl_User\Edit.cshtml" />
+    <Content Include="Views\tbl_User\Index.cshtml" />
+    <Content Include="Views\tbl_Doctor\Create.cshtml" />
+    <Content Include="Views\tbl_Doctor\Delete.cshtml" />
+    <Content Include="Views\tbl_Doctor\Details.cshtml" />
+    <Content Include="Views\tbl_Doctor\Edit.cshtml" />
+    <Content Include="Views\tbl_Doctor\Index.cshtml" />
+    <Content Include="Views\tbl_ServiceUnit\Create.cshtml" />
+    <Content Include="Views\tbl_ServiceUnit\Delete.cshtml" />
+    <Content Include="Views\tbl_ServiceUnit\Details.cshtml" />
+    <Content Include="Views\tbl_ServiceUnit\Edit.cshtml" />
+    <Content Include="Views\tbl_ServiceUnit\Index.cshtml" />
+    <Content Include="Views\tbl_Office\Create.cshtml" />
+    <Content Include="Views\tbl_Office\Delete.cshtml" />
+    <Content Include="Views\tbl_Office\Details.cshtml" />
+    <Content Include="Views\tbl_Office\Edit.cshtml" />
+    <Content Include="Views\tbl_Office\Index.cshtml" />
+    <Content Include="Views\tbl_Specialize\Create.cshtml" />
+    <Content Include="Views\tbl_Specialize\Delete.cshtml" />
+    <Content Include="Views\tbl_Specialize\Details.cshtml" />
+    <Content Include="Views\tbl_Specialize\Edit.cshtml" />
+    <Content Include="Views\tbl_Specialize\Index.cshtml" />
+    <Content Include="Views\tbl_Customer\Create.cshtml" />
+    <Content Include="Views\tbl_Customer\Delete.cshtml" />
+    <Content Include="Views\tbl_Customer\Details.cshtml" />
+    <Content Include="Views\tbl_Customer\Edit.cshtml" />
+    <Content Include="Views\tbl_Customer\Index.cshtml" />
+    <Content Include="Views\tbl_Schedule\Create.cshtml" />
+    <Content Include="Views\tbl_Schedule\Delete.cshtml" />
+    <Content Include="Views\tbl_Schedule\Details.cshtml" />
+    <Content Include="Views\tbl_Schedule\Edit.cshtml" />
+    <Content Include="Views\tbl_Schedule\Index.cshtml" />
+    <Content Include="Views\tbl_Miss\Create.cshtml" />
+    <Content Include="Views\tbl_Miss\Delete.cshtml" />
+    <Content Include="Views\tbl_Miss\Details.cshtml" />
+    <Content Include="Views\tbl_Miss\Edit.cshtml" />
+    <Content Include="Views\tbl_Miss\Index.cshtml" />
+    <Content Include="Views\tbl_Treatment\Create.cshtml" />
+    <Content Include="Views\tbl_Treatment\Delete.cshtml" />
+    <Content Include="Views\tbl_Treatment\Details.cshtml" />
+    <Content Include="Views\tbl_Treatment\Edit.cshtml" />
+    <Content Include="Views\tbl_Treatment\Index.cshtml" />
+    <Content Include="Views\tbl_Done\Create.cshtml" />
+    <Content Include="Views\tbl_Done\Delete.cshtml" />
+    <Content Include="Views\tbl_Done\Details.cshtml" />
+    <Content Include="Views\tbl_Done\Edit.cshtml" />
+    <Content Include="Views\tbl_Done\Index.cshtml" />
+    <Content Include="Views\tbl_Payment\Create.cshtml" />
+    <Content Include="Views\tbl_Payment\Delete.cshtml" />
+    <Content Include="Views\tbl_Payment\Details.cshtml" />
+    <Content Include="Views\tbl_Payment\Edit.cshtml" />
+    <Content Include="Views\tbl_Payment\Index.cshtml" />
+    <Content Include="Views\tbl_Debt\Create.cshtml" />
+    <Content Include="Views\tbl_Debt\Delete.cshtml" />
+    <Content Include="Views\tbl_Debt\Details.cshtml" />
+    <Content Include="Views\tbl_Debt\Edit.cshtml" />
+    <Content Include="Views\tbl_Debt\Index.cshtml" />
+    <Content Include="Views\tbl_ProductCategory\Create.cshtml" />
+    <Content Include="Views\tbl_ProductCategory\Delete.cshtml" />
+    <Content Include="Views\tbl_ProductCategory\Details.cshtml" />
+    <Content Include="Views\tbl_ProductCategory\Edit.cshtml" />
+    <Content Include="Views\tbl_ProductCategory\Index.cshtml" />
+    <Content Include="Views\tbl_Product\Create.cshtml" />
+    <Content Include="Views\tbl_Product\Delete.cshtml" />
+    <Content Include="Views\tbl_Product\Details.cshtml" />
+    <Content Include="Views\tbl_Product\Edit.cshtml" />
+    <Content Include="Views\tbl_Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

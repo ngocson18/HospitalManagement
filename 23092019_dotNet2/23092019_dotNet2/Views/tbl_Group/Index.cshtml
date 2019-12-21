@@ -1,0 +1,84 @@
+﻿@model IEnumerable<_23092019_dotNet2.Models.tbl_Group>
+
+@{
+    ViewBag.Title = "UserGroup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 user_group">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>Danh sách nhóm người dùng</h4>
+
+            @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <i class="fas fa-plus-circle mr-1"></i>Thêm mới
+            </button>*@
+
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                <i class="fas fa-plus-circle mr-1"></i>@Html.ActionLink("Thêm mới", "Create")
+            </button>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            Nhóm
+                        </th>
+                        <th>
+                            Mô tả
+                        </th>
+                        @*<th>Người tạo</th>
+                            <th>Thời gian tạo</th>*@
+                        <th>
+                            Trạng thái
+                        </th>
+                        <th>Thao tác</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.description)
+                            </td>
+                            @*<td>
+                                    @Html.DisplayFor(modelItem => item.Age)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Age)
+                                </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.status)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function CloseModalPopup() {
+        $("#myModal").modal('hide');
+    }
+</script>

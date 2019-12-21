@@ -185,6 +185,7 @@ a {
 
     .btn > i {
         margin-left: 0 !important;
+        border-radius: 50%;
     }
 
     .btn.btn-lg {

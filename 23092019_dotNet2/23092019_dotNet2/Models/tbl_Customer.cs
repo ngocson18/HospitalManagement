@@ -53,5 +53,7 @@ namespace _23092019_dotNet2.Models
         public virtual ICollection<tbl_MedicalBill> tbl_MedicalBill1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_MedicalBill> tbl_MedicalBill2 { get; set; }
+        public virtual tbl_Office tbl_Office { get; set; }
+        public virtual tbl_ServiceUnit tbl_ServiceUnit { get; set; }
     }
 }

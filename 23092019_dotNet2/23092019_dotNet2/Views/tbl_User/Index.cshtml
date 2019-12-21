@@ -1,0 +1,117 @@
+﻿@model IEnumerable<_23092019_dotNet2.Models.tbl_User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 user_list">
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <h4>DANH SÁCH NGƯỜI DÙNG</h4>
+            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            Họ Tên
+                        </th>
+                        <th>
+                           Tên đăng nhập
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.password)
+                        </th>*@
+                        <th>
+                            Ngày sinh
+                        </th>
+                        <th>
+                           Giới tính
+                        </th>
+                        <th>
+                            SĐT
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.groupId)
+                        </th>*@
+                        <th>
+                            Nhóm
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Trạng thái
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.tbl_Group.name)
+                        </th>*@
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.tbl_Group1.name)
+                        </th>*@
+                        <th>Thao tác</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.username)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.password)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dob)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.phone)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.groupId)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.departmentId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.status)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.tbl_Group.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tbl_Group1.name)
+                            </td>*@
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                            </td>
+                        </tr>
+                    }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

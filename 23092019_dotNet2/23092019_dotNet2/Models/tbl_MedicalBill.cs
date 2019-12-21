@@ -56,5 +56,6 @@ namespace _23092019_dotNet2.Models
         public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Payment> tbl_Payment { get; set; }
+        public virtual tbl_Office tbl_Office { get; set; }
     }
 }

@@ -19,6 +19,8 @@ namespace _23092019_dotNet2.Models
         {
             this.tbl_CustomerBooking = new HashSet<tbl_CustomerBooking>();
             this.tbl_CustomerBooking1 = new HashSet<tbl_CustomerBooking>();
+            this.tbl_Customer = new HashSet<tbl_Customer>();
+            this.tbl_MedicalBill = new HashSet<tbl_MedicalBill>();
         }
     
         public short id { get; set; }
@@ -40,5 +42,9 @@ namespace _23092019_dotNet2.Models
         public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_CustomerBooking> tbl_CustomerBooking1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_Customer> tbl_Customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbl_MedicalBill> tbl_MedicalBill { get; set; }
     }
 }

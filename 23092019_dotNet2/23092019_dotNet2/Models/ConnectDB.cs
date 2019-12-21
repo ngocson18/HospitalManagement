@@ -12,12 +12,16 @@ namespace _23092019_dotNet2.Models
     {
         public ConnectDB() : base("dbPath") { }
         public DbSet<User> tbl_User { get; set; }
+        public DbSet<User> tbl_GroupUser { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable("tbl_User");
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
-        }
 
+            modelBuilder.Entity<GroupUser>().ToTable("tbl_GroupUser");
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

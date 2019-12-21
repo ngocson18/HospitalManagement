@@ -24,45 +24,69 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                     <tr>
-                        <th>STT</th>
-                        <th>Tên KH</th>
-                        <th>SĐT</th>
-                        <th>Bác sĩ</th>
-                        <th>Chi phí</th>
-                        <th>Đã nộp</th>
-                        <th>Còn nợ</th>
-                        <th>HTTT</th>
+                        <th>
+                            Tên khách hàng
+                        </th>
+                        <th>
+                            SĐT
+                        </th>
+                        <th>
+                            Tên dịch vụ
+                        <th>
+                            Bác sĩ
+                        </th>
+                        <th>
+                            Tổng chi phí
+                        </th>
+                        <th>
+                            Đã trả
+                        </th>
+                        <th>
+                            Còn nợ
+                        </th>
+                        <th>
+                            PTTT
+                        </th>
                         <th>Thao tác</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="">
-                            Nguyễn Ngọc Sơn
-                        </td>
-                        <td>
-                            <div class="">0985796921</div>
-                        </td>
-                        <td>
-                           Thúy Vân
-                        </td>
-                        <td>
-                            750.000.000
-                        </td>
-                        <td>
-                            20.000.000
-                        </td>
-                        <td>
-                            730.000.000
-                        </td>
-                        <td>
-                            Chuyển khoản
-                        </td>
-                        <td>
-                            <button type="button" class="button-custom btn btn-info">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </td>
-                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.customerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.serviceUnitName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.doctor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.totalFee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.paidFee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.debtFee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.paymentType)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                            </td>
+                        </tr>
+                    }
                 </table>
             </div>
         </div>
