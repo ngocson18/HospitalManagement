@@ -3369,8 +3369,6 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
-    <Content Include="Views\Payment\PaymentProfile.cshtml" />
-    <Content Include="Views\Payment\DebtList.cshtml" />
     <Content Include="Views\Products\CategoryProducts.cshtml" />
     <Content Include="Views\Products\ProductsList.cshtml" />
     <Content Include="Views\Products\BuyProducts.cshtml" />

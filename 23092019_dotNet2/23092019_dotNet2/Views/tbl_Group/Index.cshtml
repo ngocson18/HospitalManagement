@@ -41,9 +41,9 @@
                         </th>
                         @*<th>Người tạo</th>
                             <th>Thời gian tạo</th>*@
-                        <th>
+                        @*<th>
                             Trạng thái
-                        </th>
+                        </th>*@
                         <th>Thao tác</th>
                     </tr>
                     @foreach (var item in Model)
@@ -55,15 +55,17 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.description)
                             </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.Age)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Age)
-                                </td>*@
-                            <td>
-                                @Html.DisplayFor(modelItem => item.status)
-                            </td>
+                           
+                                @*@Html.DisplayFor(modelItem => item.status)*@
+                                @*@if (item.status == 0)
+                                {
+                                    <label>Ngừng hoạt động</label>
+                                }
+                                else if (item.status == 1)
+                                {
+                                    <label>Đang hoạt động</label>
+                                }*@
+
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.id }) |

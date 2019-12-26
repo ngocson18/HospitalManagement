@@ -52,9 +52,6 @@
                         <th>
                             Email
                         </th>
-                        <th>
-                            Trạng thái
-                        </th>
                         @*<th>
                             @Html.DisplayNameFor(model => model.tbl_Group.name)
                         </th>*@
@@ -77,10 +74,23 @@
                                 @Html.DisplayFor(modelItem => item.password)
                             </td>*@
                             <td>
-                                @Html.DisplayFor(modelItem => item.dob)
+                                @*@Html.DisplayFor(modelItem => item.dob)*@
+                                @Convert.ToDateTime(item.dob).ToString("dd/MM/yyyy")
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.gender)
+                                @if (item.gender == 1)
+                                {
+                                    <label>Nam</label>
+                                }
+                                else if (item.gender == 0)
+                                {
+                                    <label>Nữ</label>
+                                }
+                                else if (item.gender == 3)
+                                {
+                                    <label>GT khác</label>
+                                }
+                                @*@Html.DisplayFor(modelItem => item.gender)*@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.phone)
@@ -93,9 +103,6 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.email)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.status)
                             </td>
                             @*<td>
                                 @Html.DisplayFor(modelItem => item.tbl_Group.name)
