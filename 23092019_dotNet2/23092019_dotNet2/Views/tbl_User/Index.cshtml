@@ -29,23 +29,23 @@
                             Họ Tên
                         </th>
                         <th>
-                           Tên đăng nhập
+                            Tên đăng nhập
                         </th>
                         @*<th>
-                            @Html.DisplayNameFor(model => model.password)
-                        </th>*@
+                                @Html.DisplayNameFor(model => model.password)
+                            </th>*@
                         <th>
                             Ngày sinh
                         </th>
                         <th>
-                           Giới tính
+                            Giới tính
                         </th>
                         <th>
                             SĐT
                         </th>
                         @*<th>
-                            @Html.DisplayNameFor(model => model.groupId)
-                        </th>*@
+                                @Html.DisplayNameFor(model => model.groupId)
+                            </th>*@
                         <th>
                             Nhóm
                         </th>
@@ -53,11 +53,11 @@
                             Email
                         </th>
                         @*<th>
-                            @Html.DisplayNameFor(model => model.tbl_Group.name)
-                        </th>*@
+                                @Html.DisplayNameFor(model => model.tbl_Group.name)
+                            </th>*@
                         @*<th>
-                            @Html.DisplayNameFor(model => model.tbl_Group1.name)
-                        </th>*@
+                                @Html.DisplayNameFor(model => model.tbl_Group1.name)
+                            </th>*@
                         <th>Thao tác</th>
                     </tr>
 
@@ -71,8 +71,8 @@
                                 @Html.DisplayFor(modelItem => item.username)
                             </td>
                             @*<td>
-                                @Html.DisplayFor(modelItem => item.password)
-                            </td>*@
+                                    @Html.DisplayFor(modelItem => item.password)
+                                </td>*@
                             <td>
                                 @*@Html.DisplayFor(modelItem => item.dob)*@
                                 @Convert.ToDateTime(item.dob).ToString("dd/MM/yyyy")
@@ -96,8 +96,8 @@
                                 @Html.DisplayFor(modelItem => item.phone)
                             </td>
                             @*<td>
-                                @Html.DisplayFor(modelItem => item.groupId)
-                            </td>*@
+                                    @Html.DisplayFor(modelItem => item.groupId)
+                                </td>*@
                             <td>
                                 @Html.DisplayFor(modelItem => item.departmentId)
                             </td>
@@ -105,11 +105,11 @@
                                 @Html.DisplayFor(modelItem => item.email)
                             </td>
                             @*<td>
-                                @Html.DisplayFor(modelItem => item.tbl_Group.name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.tbl_Group1.name)
-                            </td>*@
+                                    @Html.DisplayFor(modelItem => item.tbl_Group.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.tbl_Group1.name)
+                                </td>*@
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.id }) |
@@ -117,8 +117,8 @@
                             </td>
                         </tr>
                     }
-                    </table>
-                </div>
+                </table>
             </div>
         </div>
     </div>
+</div>
