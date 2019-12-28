@@ -4,8 +4,8 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Delete</h2>
+<div class="col-12">
+<h2>Xóa người dùng</h2>
 
 <h3>Bạn có chắc chắn muốn xóa người này không?</h3>
 <div>
@@ -91,54 +91,6 @@
             @Html.DisplayFor(model => model.status)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.createdTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.createdTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.updatedTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.updatedTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.createdBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.updatedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.updatedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_Group.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tbl_Group.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_Group1.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tbl_Group1.name)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
@@ -149,4 +101,5 @@
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
+</div>
 </div>

@@ -19,7 +19,9 @@
                 </form>
             </div>
             <h4>DANH SÁCH DỊCH VỤ</h4>
-            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+            <button style="color: #fff" type="button" class="w3-btn w3-white w3-border w3-padding-small" data-toggle="modal" data-target="#myModal">
+                @Html.ActionLink("Thêm mới", "Create")
+            </button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -31,15 +33,15 @@
                         <th>
                             Giá (VNĐ)
                         </th>
-                        <th>
+                        @*<th>
                             Giá (USD)
-                        </th>
+                        </th>*@
                         <th>
                             Ghi chú
                         </th>
-                        <th>
+                        @*<th>
                             Trạng thái
-                        </th>
+                        </th>*@
                         <th>Thao tác</th>
                     </tr>
 
@@ -52,15 +54,15 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.priceVND)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.priceUSD)
-                            </td>
+                            </td>*@
                             <td>
                                 @Html.DisplayFor(modelItem => item.note)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.status)
-                            </td>
+                            </td>*@
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.id }) |

@@ -19,7 +19,9 @@
                 </form>
             </div>
             <h4>DANH SÁCH CƠ SỞ</h4>
-            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>@Html.ActionLink("Thêm mới", "Create")</button>
+            <button style="color: #fff" type="button" class="w3-btn w3-white w3-border w3-padding-small" data-toggle="modal" data-target="#myModal">
+                @Html.ActionLink("Thêm mới", "Create")
+            </button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -43,9 +45,9 @@
                         <th>
                             Mô tả
                         </th>
-                        <th>
+                        @*<th>
                             Trạng thái
-                        </th>
+                        </th>*@
                         <th>Thao tác</th>
                     </tr>
 
@@ -70,13 +72,12 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.description)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.status)
-                            </td>
+                            </td>*@
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                <button class="w3-button w3-khaki w3-circle w3-teal">@Html.ActionLink("Sửa", "Edit", new { id = item.id })</button>
+                                <button class="w3-button  w3-circle w3-red">@Html.ActionLink("Xóa", "Delete", new { id = item.id })</button>
                             </td>
                         </tr>
                     }

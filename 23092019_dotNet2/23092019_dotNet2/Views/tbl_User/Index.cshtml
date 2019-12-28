@@ -19,7 +19,9 @@
                 </form>
             </div>
             <h4>DANH SÁCH NGƯỜI DÙNG</h4>
-            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>Thêm mới</button>
+            <button style="color: #fff" type="button" class="w3-btn w3-white w3-border w3-padding-small" data-toggle="modal" data-target="#myModal">
+                @Html.ActionLink("Thêm mới", "Create")
+            </button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -31,9 +33,6 @@
                         <th>
                             Tên đăng nhập
                         </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.password)
-                            </th>*@
                         <th>
                             Ngày sinh
                         </th>
@@ -43,21 +42,12 @@
                         <th>
                             SĐT
                         </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.groupId)
-                            </th>*@
                         <th>
                             Nhóm
                         </th>
                         <th>
                             Email
                         </th>
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.tbl_Group.name)
-                            </th>*@
-                        @*<th>
-                                @Html.DisplayNameFor(model => model.tbl_Group1.name)
-                            </th>*@
                         <th>Thao tác</th>
                     </tr>
 
@@ -70,9 +60,6 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.username)
                             </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.password)
-                                </td>*@
                             <td>
                                 @*@Html.DisplayFor(modelItem => item.dob)*@
                                 @Convert.ToDateTime(item.dob).ToString("dd/MM/yyyy")
@@ -95,25 +82,15 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.phone)
                             </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.groupId)
-                                </td>*@
                             <td>
                                 @Html.DisplayFor(modelItem => item.departmentId)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.email)
                             </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.tbl_Group.name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.tbl_Group1.name)
-                                </td>*@
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                <button class="w3-button w3-khaki w3-circle w3-teal">@Html.ActionLink("Sửa", "Edit", new { id = item.id })</button>
+                                <button class="w3-button  w3-circle w3-red">@Html.ActionLink("Xóa", "Delete", new { id = item.id })</button>
                             </td>
                         </tr>
                     }
