@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_Hospital_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dob" Type="DateTime" Precision="0" />
+    <Property Name="gender" Type="Int32" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="userName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="userId" Type="Int16" />
+    <Property Name="avatar" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="facebook" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="customerType" Type="Int16" />
+    <Property Name="serviceUnitId" Type="Int16" />
+    <Property Name="serviceUnitName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="quantity" Type="Int16" />
+    <Property Name="bookingDate" Type="DateTime" Precision="0" />
+    <Property Name="comingDate" Type="DateTime" Precision="0" />
+    <Property Name="reappointmentDate" Type="DateTime" Precision="0" />
+    <Property Name="doctor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="officeId" Type="Int16" />
+    <Property Name="officeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_MedicalBill" Relationship="Self.FK_tbl_MedicalBill_tbl_Customer" FromRole="tbl_Customer" ToRole="tbl_MedicalBill" />
+    <NavigationProperty Name="tbl_MedicalBill1" Relationship="Self.FK_tbl_MedicalBill_tbl_Customer1" FromRole="tbl_Customer" ToRole="tbl_MedicalBill" />
+    <NavigationProperty Name="tbl_MedicalBill2" Relationship="Self.FK_tbl_MedicalBill_tbl_Customer2" FromRole="tbl_Customer" ToRole="tbl_MedicalBill" />
+    <NavigationProperty Name="tbl_Office" Relationship="DB_Hospital_ManagementModel.FK_tbl_Customer_tbl_Office" FromRole="tbl_Customer" ToRole="tbl_Office" />
+    <NavigationProperty Name="tbl_ServiceUnit" Relationship="DB_Hospital_ManagementModel.FK_tbl_Customer_tbl_ServiceUnit" FromRole="tbl_Customer" ToRole="tbl_ServiceUnit" />
+  </EntityType>
+  <EntityType Name="tbl_CustomerBooking">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="medicalBillId" Type="Int16" />
+    <Property Name="serviceUnitId" Type="Int16" />
+    <Property Name="bookingDate" Type="DateTime" Precision="0" />
+    <Property Name="comingDate" Type="DateTime" Precision="0" />
+    <Property Name="officeId" Type="Int16" />
+    <Property Name="productId" Type="Int16" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="servicePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="payment" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="debt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="payMethod" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_MedicalBill" Relationship="Self.FK_tbl_CustomerBooking_tbl_MedicalBill" FromRole="tbl_CustomerBooking" ToRole="tbl_MedicalBill" />
+    <NavigationProperty Name="tbl_MedicalBill1" Relationship="Self.FK_tbl_CustomerBooking_tbl_MedicalBill1" FromRole="tbl_CustomerBooking" ToRole="tbl_MedicalBill" />
+    <NavigationProperty Name="tbl_Office" Relationship="Self.FK_tbl_CustomerBooking_tbl_Office" FromRole="tbl_CustomerBooking" ToRole="tbl_Office" />
+    <NavigationProperty Name="tbl_Office1" Relationship="Self.FK_tbl_CustomerBooking_tbl_Office1" FromRole="tbl_CustomerBooking" ToRole="tbl_Office" />
+    <NavigationProperty Name="tbl_Product" Relationship="Self.FK_tbl_CustomerBooking_tbl_Product" FromRole="tbl_CustomerBooking" ToRole="tbl_Product" />
+    <NavigationProperty Name="tbl_Product1" Relationship="Self.FK_tbl_CustomerBooking_tbl_Product1" FromRole="tbl_CustomerBooking" ToRole="tbl_Product" />
+    <NavigationProperty Name="tbl_ServiceUnit" Relationship="Self.FK_tbl_CustomerBooking_tbl_ServiceUnit" FromRole="tbl_CustomerBooking" ToRole="tbl_ServiceUnit" />
+    <NavigationProperty Name="tbl_ServiceUnit1" Relationship="Self.FK_tbl_CustomerBooking_tbl_ServiceUnit1" FromRole="tbl_CustomerBooking" ToRole="tbl_ServiceUnit" />
+  </EntityType>
+  <EntityType Name="tbl_Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_User" Relationship="Self.FK_tbl_User_tbl_Group" FromRole="tbl_Group" ToRole="tbl_User" />
+    <NavigationProperty Name="tbl_User1" Relationship="Self.FK_tbl_User_tbl_Group1" FromRole="tbl_Group" ToRole="tbl_User" />
+  </EntityType>
+  <EntityType Name="tbl_MedicalBill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="billCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="customerId" Type="Int16" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customerPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="customerDOB" Type="DateTime" Precision="0" />
+    <Property Name="customerGender" Type="Int32" />
+    <Property Name="services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doctorId" Type="Int16" />
+    <Property Name="doctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bookingDate" Type="DateTime" Precision="0" />
+    <Property Name="comingDate" Type="DateTime" Precision="0" />
+    <Property Name="totalFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="debt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="officeId" Type="Int16" />
+    <Property Name="officeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="discountPercent" Type="Int16" />
+    <Property Name="discountMoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Customer" Relationship="Self.FK_tbl_MedicalBill_tbl_Customer" FromRole="tbl_MedicalBill" ToRole="tbl_Customer" />
+    <NavigationProperty Name="tbl_Customer1" Relationship="Self.FK_tbl_MedicalBill_tbl_Customer1" FromRole="tbl_MedicalBill" ToRole="tbl_Customer" />
+    <NavigationProperty Name="tbl_Customer2" Relationship="Self.FK_tbl_MedicalBill_tbl_Customer2" FromRole="tbl_MedicalBill" ToRole="tbl_Customer" />
+    <NavigationProperty Name="tbl_CustomerBooking" Relationship="Self.FK_tbl_CustomerBooking_tbl_MedicalBill" FromRole="tbl_MedicalBill" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_CustomerBooking1" Relationship="Self.FK_tbl_CustomerBooking_tbl_MedicalBill1" FromRole="tbl_MedicalBill" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_Payment" Relationship="Self.FK_tbl_Payment_tbl_MedicalBill" FromRole="tbl_MedicalBill" ToRole="tbl_Payment" />
+    <NavigationProperty Name="tbl_Office" Relationship="DB_Hospital_ManagementModel.FK_tbl_MedicalBill_tbl_Office" FromRole="tbl_MedicalBill" ToRole="tbl_Office" />
+  </EntityType>
+  <EntityType Name="tbl_Office">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="startedDate" Type="DateTime" Precision="0" />
+    <Property Name="endDate" Type="DateTime" Precision="0" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_CustomerBooking" Relationship="Self.FK_tbl_CustomerBooking_tbl_Office" FromRole="tbl_Office" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_CustomerBooking1" Relationship="Self.FK_tbl_CustomerBooking_tbl_Office1" FromRole="tbl_Office" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_Customer" Relationship="DB_Hospital_ManagementModel.FK_tbl_Customer_tbl_Office" FromRole="tbl_Office" ToRole="tbl_Customer" />
+    <NavigationProperty Name="tbl_MedicalBill" Relationship="DB_Hospital_ManagementModel.FK_tbl_MedicalBill_tbl_Office" FromRole="tbl_Office" ToRole="tbl_MedicalBill" />
+  </EntityType>
+  <EntityType Name="tbl_Payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="serviceUnitName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doctor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="totalFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="paidFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="debtFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="billId" Type="Int16" />
+    <Property Name="payTime" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="paymentType" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_MedicalBill" Relationship="Self.FK_tbl_Payment_tbl_MedicalBill" FromRole="tbl_Payment" ToRole="tbl_MedicalBill" />
+  </EntityType>
+  <EntityType Name="tbl_Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="productName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="productCategoryId" Type="Int16" />
+    <Property Name="productCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="urlImage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="priceOne" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="priceIn" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="priceOut" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="quantity" Type="Int16" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="importDate" Type="DateTime" Precision="0" />
+    <Property Name="VAT" Type="Int16" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_CustomerBooking" Relationship="Self.FK_tbl_CustomerBooking_tbl_Product" FromRole="tbl_Product" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_CustomerBooking1" Relationship="Self.FK_tbl_CustomerBooking_tbl_Product1" FromRole="tbl_Product" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_ProductCategory" Relationship="Self.FK_tbl_Product_tbl_ProductCategory" FromRole="tbl_Product" ToRole="tbl_ProductCategory" />
+  </EntityType>
+  <EntityType Name="tbl_ProductCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="createTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Product" Relationship="Self.FK_tbl_Product_tbl_ProductCategory" FromRole="tbl_ProductCategory" ToRole="tbl_Product" />
+  </EntityType>
+  <EntityType Name="tbl_ServiceUnit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="priceVND" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="priceUSD" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="minPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="maxPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="picture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_CustomerBooking" Relationship="Self.FK_tbl_CustomerBooking_tbl_ServiceUnit" FromRole="tbl_ServiceUnit" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_CustomerBooking1" Relationship="Self.FK_tbl_CustomerBooking_tbl_ServiceUnit1" FromRole="tbl_ServiceUnit" ToRole="tbl_CustomerBooking" />
+    <NavigationProperty Name="tbl_Customer" Relationship="DB_Hospital_ManagementModel.FK_tbl_Customer_tbl_ServiceUnit" FromRole="tbl_ServiceUnit" ToRole="tbl_Customer" />
+  </EntityType>
+  <EntityType Name="tbl_Specialize">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedtime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="DateTime" Precision="0" />
+    <Property Name="departmentId" Type="Int16" />
+    <Property Name="gender" Type="Int32" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="groupId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="groupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="createdTime" Type="DateTime" Precision="0" />
+    <Property Name="updatedTime" Type="DateTime" Precision="0" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Group" Relationship="Self.FK_tbl_User_tbl_Group" FromRole="tbl_User" ToRole="tbl_Group" />
+    <NavigationProperty Name="tbl_Group1" Relationship="Self.FK_tbl_User_tbl_Group1" FromRole="tbl_User" ToRole="tbl_Group" />
+  </EntityType>
+  <Association Name="FK_tbl_MedicalBill_tbl_Customer">
+    <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="0..1" />
+    <End Role="tbl_MedicalBill" Type="Self.tbl_MedicalBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_MedicalBill">
+        <PropertyRef Name="customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MedicalBill_tbl_Customer1">
+    <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="0..1" />
+    <End Role="tbl_MedicalBill" Type="Self.tbl_MedicalBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_MedicalBill">
+        <PropertyRef Name="customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MedicalBill_tbl_Customer2">
+    <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="0..1" />
+    <End Role="tbl_MedicalBill" Type="Self.tbl_MedicalBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_MedicalBill">
+        <PropertyRef Name="customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_MedicalBill">
+    <End Role="tbl_MedicalBill" Type="Self.tbl_MedicalBill" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MedicalBill">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="medicalBillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_MedicalBill1">
+    <End Role="tbl_MedicalBill" Type="Self.tbl_MedicalBill" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MedicalBill">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="medicalBillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_Office">
+    <End Role="tbl_Office" Type="Self.tbl_Office" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Office">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="officeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_Office1">
+    <End Role="tbl_Office" Type="Self.tbl_Office" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Office">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="officeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_Product">
+    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_Product1">
+    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="productId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_ServiceUnit">
+    <End Role="tbl_ServiceUnit" Type="Self.tbl_ServiceUnit" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ServiceUnit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="serviceUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CustomerBooking_tbl_ServiceUnit1">
+    <End Role="tbl_ServiceUnit" Type="Self.tbl_ServiceUnit" Multiplicity="0..1" />
+    <End Role="tbl_CustomerBooking" Type="Self.tbl_CustomerBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ServiceUnit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_CustomerBooking">
+        <PropertyRef Name="serviceUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_tbl_Group">
+    <End Role="tbl_Group" Type="Self.tbl_Group" Multiplicity="0..1" />
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_User">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_User_tbl_Group1">
+    <End Role="tbl_Group" Type="Self.tbl_Group" Multiplicity="0..1" />
+    <End Role="tbl_User" Type="Self.tbl_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_User">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Payment_tbl_MedicalBill">
+    <End Role="tbl_MedicalBill" Type="Self.tbl_MedicalBill" Multiplicity="0..1" />
+    <End Role="tbl_Payment" Type="Self.tbl_Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_MedicalBill">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Payment">
+        <PropertyRef Name="billId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Product_tbl_ProductCategory">
+    <End Role="tbl_ProductCategory" Type="Self.tbl_ProductCategory" Multiplicity="0..1" />
+    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ProductCategory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Product">
+        <PropertyRef Name="productCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_Hospital" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
+    <EntitySet Name="tbl_CustomerBooking" EntityType="Self.tbl_CustomerBooking" />
+    <EntitySet Name="tbl_Group" EntityType="Self.tbl_Group" />
+    <EntitySet Name="tbl_MedicalBill" EntityType="Self.tbl_MedicalBill" />
+    <EntitySet Name="tbl_Office" EntityType="Self.tbl_Office" />
+    <EntitySet Name="tbl_Payment" EntityType="Self.tbl_Payment" />
+    <EntitySet Name="tbl_Product" EntityType="Self.tbl_Product" />
+    <EntitySet Name="tbl_ProductCategory" EntityType="Self.tbl_ProductCategory" />
+    <EntitySet Name="tbl_ServiceUnit" EntityType="Self.tbl_ServiceUnit" />
+    <EntitySet Name="tbl_Specialize" EntityType="Self.tbl_Specialize" />
+    <EntitySet Name="tbl_User" EntityType="Self.tbl_User" />
+    <AssociationSet Name="FK_tbl_MedicalBill_tbl_Customer" Association="Self.FK_tbl_MedicalBill_tbl_Customer">
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MedicalBill_tbl_Customer1" Association="Self.FK_tbl_MedicalBill_tbl_Customer1">
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MedicalBill_tbl_Customer2" Association="Self.FK_tbl_MedicalBill_tbl_Customer2">
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_MedicalBill" Association="Self.FK_tbl_CustomerBooking_tbl_MedicalBill">
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_MedicalBill1" Association="Self.FK_tbl_CustomerBooking_tbl_MedicalBill1">
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_Office" Association="Self.FK_tbl_CustomerBooking_tbl_Office">
+      <End Role="tbl_Office" EntitySet="tbl_Office" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_Office1" Association="Self.FK_tbl_CustomerBooking_tbl_Office1">
+      <End Role="tbl_Office" EntitySet="tbl_Office" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_Product" Association="Self.FK_tbl_CustomerBooking_tbl_Product">
+      <End Role="tbl_Product" EntitySet="tbl_Product" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_Product1" Association="Self.FK_tbl_CustomerBooking_tbl_Product1">
+      <End Role="tbl_Product" EntitySet="tbl_Product" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_ServiceUnit" Association="Self.FK_tbl_CustomerBooking_tbl_ServiceUnit">
+      <End Role="tbl_ServiceUnit" EntitySet="tbl_ServiceUnit" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CustomerBooking_tbl_ServiceUnit1" Association="Self.FK_tbl_CustomerBooking_tbl_ServiceUnit1">
+      <End Role="tbl_ServiceUnit" EntitySet="tbl_ServiceUnit" />
+      <End Role="tbl_CustomerBooking" EntitySet="tbl_CustomerBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_tbl_Group" Association="Self.FK_tbl_User_tbl_Group">
+      <End Role="tbl_Group" EntitySet="tbl_Group" />
+      <End Role="tbl_User" EntitySet="tbl_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_User_tbl_Group1" Association="Self.FK_tbl_User_tbl_Group1">
+      <End Role="tbl_Group" EntitySet="tbl_Group" />
+      <End Role="tbl_User" EntitySet="tbl_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Payment_tbl_MedicalBill" Association="Self.FK_tbl_Payment_tbl_MedicalBill">
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+      <End Role="tbl_Payment" EntitySet="tbl_Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Product_tbl_ProductCategory" Association="Self.FK_tbl_Product_tbl_ProductCategory">
+      <End Role="tbl_ProductCategory" EntitySet="tbl_ProductCategory" />
+      <End Role="tbl_Product" EntitySet="tbl_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customer_tbl_Office" Association="DB_Hospital_ManagementModel.FK_tbl_Customer_tbl_Office">
+      <End Role="tbl_Office" EntitySet="tbl_Office" />
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Customer_tbl_ServiceUnit" Association="DB_Hospital_ManagementModel.FK_tbl_Customer_tbl_ServiceUnit">
+      <End Role="tbl_ServiceUnit" EntitySet="tbl_ServiceUnit" />
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_MedicalBill_tbl_Office" Association="DB_Hospital_ManagementModel.FK_tbl_MedicalBill_tbl_Office">
+      <End Role="tbl_Office" EntitySet="tbl_Office" />
+      <End Role="tbl_MedicalBill" EntitySet="tbl_MedicalBill" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_tbl_Customer_tbl_Office">
+    <End Type="DB_Hospital_ManagementModel.tbl_Office" Role="tbl_Office" Multiplicity="0..1" />
+    <End Type="DB_Hospital_ManagementModel.tbl_Customer" Role="tbl_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Office">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Customer">
+        <PropertyRef Name="officeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Customer_tbl_ServiceUnit">
+    <End Type="DB_Hospital_ManagementModel.tbl_ServiceUnit" Role="tbl_ServiceUnit" Multiplicity="0..1" />
+    <End Type="DB_Hospital_ManagementModel.tbl_Customer" Role="tbl_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ServiceUnit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Customer">
+        <PropertyRef Name="serviceUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_MedicalBill_tbl_Office">
+    <End Type="DB_Hospital_ManagementModel.tbl_Office" Role="tbl_Office" Multiplicity="0..1" />
+    <End Type="DB_Hospital_ManagementModel.tbl_MedicalBill" Role="tbl_MedicalBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Office">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_MedicalBill">
+        <PropertyRef Name="officeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
