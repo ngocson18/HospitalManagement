@@ -5,135 +5,135 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container">
+    <h3>Chi tiết thanh toán</h3>
+    <div class="col-12">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.customerName)
+            </dt>
 
-<div>
-    <h4>tbl_Payment</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.customerName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.customerName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.customerName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.phone)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.phone)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.phone)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.serviceUnitName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.serviceUnitName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.serviceUnitName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.serviceUnitName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.doctor)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.doctor)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.doctor)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.doctor)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.totalFee)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.totalFee)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.totalFee)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.totalFee)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.paidFee)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.paidFee)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.paidFee)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.paidFee)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.debtFee)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.debtFee)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.debtFee)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.debtFee)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.payTime)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.payTime)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.payTime)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.payTime)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.status)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.status)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.paymentType)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.paymentType)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.paymentType)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.paymentType)
-        </dd>
+            @*<dt>
+                @Html.DisplayNameFor(model => model.createdTime)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.createdTime)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.createdTime)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.createdTime)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.updatedTime)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.updatedTime)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.updatedTime)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.updatedTime)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.createdBy)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.createdBy)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.createdBy)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.updatedBy)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.updatedBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.updatedBy)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.updatedBy)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.tbl_MedicalBill.billCode)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_MedicalBill.billCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tbl_MedicalBill.billCode)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.tbl_MedicalBill.billCode)
+            </dd>*@
+        </dl>
+    </div>
+    <div class="col-12">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

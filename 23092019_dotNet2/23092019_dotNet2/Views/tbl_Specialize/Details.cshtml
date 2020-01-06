@@ -5,71 +5,72 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container">
+    <h3>Chi tiết chuyên môn</h3>
+    <div class="col-12">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
 
-<div>
-    <h4>tbl_Specialize</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.description)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.status)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.status)
-        </dd>
+            @*<dt>
+                @Html.DisplayNameFor(model => model.createdTime)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.createdTime)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.createdTime)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.createdTime)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.updatedtime)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.updatedtime)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.updatedtime)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.updatedtime)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.createdBy)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.createdBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.createdBy)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.createdBy)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.updatedBy)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.updatedBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.updatedBy)
+            </dd>*@
 
-        <dd>
-            @Html.DisplayFor(model => model.updatedBy)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <div class="col-12">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
