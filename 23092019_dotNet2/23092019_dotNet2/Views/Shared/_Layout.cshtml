@@ -9,6 +9,63 @@
         @Scripts.Render("~/bundles/modernizr")
         @RenderSection("css", false)
     *@
+    <style>
+        table td a {
+            color: #fff;
+        }
+        table td a:hover {
+            color: #000;
+        }
+        table td button {
+            padding-top: 2px!important;
+            padding-bottom : 2px!important;  
+        }
+        button a {
+            color: #fff;
+        }
+        button a:hover {
+            color: aqua;
+            text-decoration: none;
+        }
+        table {
+            counter-reset: tableCount;
+        }
+        .counterCell {
+            width: 5%;
+        }
+        .counterCell:before {
+            content: counter(tableCount);
+            counter-increment: tableCount;
+        }
+        .center {
+            text-align: center;
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+            .pagination a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                transition: background-color .3s;
+                border: 1px solid #ddd;
+                margin: 0 4px;
+            }
+
+                .pagination a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                    border: 1px solid #4CAF50;
+                }
+
+                .pagination a:hover:not(.active) {
+                    background-color: #FF99FF;
+                }
+
+    </style>
     <link rel="stylesheet" href="~/Content/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/modules/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="~/Content/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">

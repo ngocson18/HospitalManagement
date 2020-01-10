@@ -1,4 +1,6 @@
-﻿@model IEnumerable<_23092019_dotNet2.Models.tbl_User>
+﻿@*@model IEnumerable<_23092019_dotNet2.Models.tbl_User>*@
+@model PagedList.IPagedList<_23092019_dotNet2.Models.tbl_User>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -20,13 +22,14 @@
             </div>
             <h4>Danh sách bác sĩ</h4>
             @*<button style="color: #fff" type="button" class="w3-btn w3-white w3-border w3-padding-small" data-toggle="modal" data-target="#myModal">
-                @Html.ActionLink("Thêm mới", "Create")
-            </button>*@
+                    @Html.ActionLink("Thêm mới", "Create")
+                </button>*@
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <tr>
+                        <th>STT</th>
                         <th>
                             Họ tên
                         </th>
@@ -45,18 +48,20 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td class="counterCell"></td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.name)
                             </td>
                             <td>
-                                @if(item.gender == 1)
+                                @if (item.gender == 1)
                                 {
                                     <label>Nam</label>
                                 }
-                                else if(item.gender ==0) {
+                                else if (item.gender == 0)
+                                {
                                     <label>Nữ</label>
                                 }
-                                else if(item.gender == 3)
+                                else if (item.gender == 3)
                                 {
                                     <label>GT khác</label>
                                 }
@@ -79,3 +84,13 @@
         </div>
     </div>
 </div>
+
+<!-- Thêm mã phân trang -->
+<div class="col-md-12 ml-2">
+        <strong>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount </strong>
+    <br />
+    <div class="col-md-12 pagination mt-3">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+<!-- Kết thúc -->

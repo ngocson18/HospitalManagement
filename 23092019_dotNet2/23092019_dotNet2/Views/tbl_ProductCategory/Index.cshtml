@@ -1,5 +1,6 @@
-﻿@model IEnumerable<_23092019_dotNet2.Models.tbl_ProductCategory>
-
+﻿@*@model IEnumerable<_23092019_dotNet2.Models.tbl_ProductCategory>*@
+@model PagedList.IPagedList<_23092019_dotNet2.Models.tbl_ProductCategory>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,6 +27,9 @@
                 <table class="table table-striped">
                     <tr>
                         <th>
+                            STT
+                        </th>
+                        <th>
                             Nhóm sản phẩm
                         </th>
                         <th>
@@ -37,16 +41,21 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td class="counterCell"></td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.name)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.description)
                             </td>
+                            @*<td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                </td>*@
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                <button class="w3-button w3-khaki w3-circle w3-teal">@Html.ActionLink("Sửa", "Edit", new { id = item.id })</button>
+                                <button class="w3-button  w3-circle w3-red">@Html.ActionLink("Xóa", "Delete", new { id = item.id })</button>
                             </td>
                         </tr>
                     }
@@ -55,3 +64,13 @@
         </div>
     </div>
 </div>
+
+<!-- Thêm mã phân trang -->
+<div class="col-md-12 ml-2">
+    <strong>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount </strong>
+    <br />
+    <div class="pagination mt-3">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+<!-- Kết thúc -->

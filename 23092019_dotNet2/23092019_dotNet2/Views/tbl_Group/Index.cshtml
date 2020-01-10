@@ -1,4 +1,6 @@
-﻿@model IEnumerable<_23092019_dotNet2.Models.tbl_Group>
+﻿@*@model IEnumerable<_23092019_dotNet2.Models.tbl_Group>*@
+@model PagedList.IPagedList<_23092019_dotNet2.Models.tbl_Group>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "UserGroup";
@@ -20,15 +22,14 @@
             </div>
             <h4>Danh sách nhóm người dùng</h4>
 
-            <button style="color: #fff" type="button" class="w3-btn w3-white w3-border w3-padding-small" data-toggle="modal" data-target="#myModal">
-                @Html.ActionLink("Thêm mới", "Create")
-            </button>
+            <button style="width: 10%" type="button" class="btn btn-success"><i class="fas fa-plus-circle mr-1"></i>@Html.ActionLink("Create New", "Create")</button>
         </div>
 
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <tr>
+                        <th>STT</th>
                         <th>
                             Nhóm
                         </th>
@@ -38,22 +39,23 @@
                         @*<th>Người tạo</th>
                             <th>Thời gian tạo</th>*@
                         @*<th>
-                            Trạng thái
-                        </th>*@
+                                Trạng thái
+                            </th>*@
                         <th>Thao tác</th>
                     </tr>
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td class="counterCell"></td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.name)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.description)
                             </td>
-                           
-                                @*@Html.DisplayFor(modelItem => item.status)*@
-                                @*@if (item.status == 0)
+
+                            @*@Html.DisplayFor(modelItem => item.status)*@
+                            @*@if (item.status == 0)
                                 {
                                     <label>Ngừng hoạt động</label>
                                 }
@@ -73,6 +75,16 @@
         </div>
     </div>
 </div>
+
+<!-- Thêm mã phân trang -->
+<div class="col-md-12 ml-2">
+    <strong>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount </strong>
+    <br />
+    <div class="pagination mt-3">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+<!-- Kết thúc -->
 
 <script>
     function CloseModalPopup() {

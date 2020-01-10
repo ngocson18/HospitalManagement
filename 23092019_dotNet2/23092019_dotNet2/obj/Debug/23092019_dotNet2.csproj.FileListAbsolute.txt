@@ -167,3 +167,7 @@ F:\BTL_dotNet\20092019_BTL\23092019_dotNet2\23092019_dotNet2\obj\Debug\23092019_
 F:\BTL_dotNet\20092019_BTL\23092019_dotNet2\23092019_dotNet2\obj\Debug\23092019_dotNet2.dll
 F:\BTL_dotNet\20092019_BTL\23092019_dotNet2\23092019_dotNet2\obj\Debug\23092019_dotNet2.pdb
 >>>>>>> tuanngoc2
+D:\TailieuHoctap\Net2\BTL\23092019_dotNet2\23092019_dotNet2\bin\PagedList.dll
+D:\TailieuHoctap\Net2\BTL\23092019_dotNet2\23092019_dotNet2\bin\PagedList.Mvc.dll
+D:\TailieuHoctap\Net2\BTL\23092019_dotNet2\23092019_dotNet2\bin\PagedList.xml
+D:\TailieuHoctap\Net2\BTL\23092019_dotNet2\23092019_dotNet2\bin\PagedList.Mvc.xml
