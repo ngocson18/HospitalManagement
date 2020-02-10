@@ -11,7 +11,8 @@ namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -33,9 +34,12 @@ namespace _23092019_dotNet2.Models
         public Nullable<short> quantity { get; set; }
         public Nullable<int> status { get; set; }
         public string supplier { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> importDate { get; set; }
         public Nullable<short> VAT { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> createdTime { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }

@@ -11,7 +11,8 @@ namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_Office
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -31,9 +32,13 @@ namespace _23092019_dotNet2.Models
         public string manager { get; set; }
         public string description { get; set; }
         public Nullable<int> status { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> startedDate { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> endDate { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> createdTime { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }

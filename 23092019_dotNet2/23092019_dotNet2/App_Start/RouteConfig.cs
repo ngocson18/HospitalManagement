@@ -26,6 +26,12 @@ namespace _23092019_dotNet2
             );
 
             routes.MapRoute(
+                name: "Login2",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Register",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Register", id = UrlParameter.Optional }

@@ -26,7 +26,7 @@ namespace _23092019_dotNet2.Controllers
 
         void connectionString()
         {
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["dbPath"].ConnectionString;
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["DB_Hospital2"].ConnectionString;
         }
 
         public ActionResult Login()
@@ -61,25 +61,25 @@ namespace _23092019_dotNet2.Controllers
             {
                 connectionString();
                 con.Open();
-                cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO tbl_User (name, username, password, dob, gender, phone, groupId, email, status, createdTime)" +
-                                    " VALUES(@name, @username, @password, @dob, @gender, @phone, @groupId, @email, @status, @createdTime); ";
+                cmd.CommandText = "INSERT INTO tbl_User (name, username, password, phone, departmentId, email)" +
+                                    " VALUES(@name, @username, @password, @phone, @departmentId, @email)";
                 cmd.Parameters.AddWithValue("@name", user.name);
                 cmd.Parameters.AddWithValue("@username", user.username);
                 cmd.Parameters.AddWithValue("@password", user.password);
-                cmd.Parameters.AddWithValue("@dob", user.dob);
-                cmd.Parameters.AddWithValue("@gender", user.gender);
+                //cmd.Parameters.AddWithValue("@dob", user.dob);
+                //cmd.Parameters.AddWithValue("@gender", user.gender);
                 cmd.Parameters.AddWithValue("@phone", user.phone);
-                cmd.Parameters.AddWithValue("@groupId", user.groupId);
+                cmd.Parameters.AddWithValue("@departmentId", user.departmentId);
                 cmd.Parameters.AddWithValue("@email", user.email);
-                cmd.Parameters.AddWithValue("@status", 1);
-                cmd.Parameters.AddWithValue("@createdTime", new DateTime());
-
+                //cmd.Parameters.AddWithValue("@status", 1);
+                //cmd.Parameters.AddWithValue("@createdTime", new DateTime());
+                cmd.Connection = con;
                 cmd.ExecuteNonQuery();
+
                 con.Close();
                 return View("Login");
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 if (con.State == ConnectionState.Open)
                 {

@@ -11,7 +11,8 @@ namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,6 +25,7 @@ namespace _23092019_dotNet2.Models
     
         public short id { get; set; }
         public string name { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> dob { get; set; }
         public Nullable<int> gender { get; set; }
         public string phone { get; set; }
@@ -35,8 +37,11 @@ namespace _23092019_dotNet2.Models
         public Nullable<short> serviceUnitId { get; set; }
         public string serviceUnitName { get; set; }
         public Nullable<short> quantity { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> bookingDate { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> comingDate { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> reappointmentDate { get; set; }
         public string doctor { get; set; }
         public Nullable<short> officeId { get; set; }

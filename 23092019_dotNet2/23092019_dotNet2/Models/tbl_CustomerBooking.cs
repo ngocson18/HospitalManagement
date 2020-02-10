@@ -11,13 +11,16 @@ namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_CustomerBooking
     {
         public short id { get; set; }
         public Nullable<short> medicalBillId { get; set; }
         public Nullable<short> serviceUnitId { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> bookingDate { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> comingDate { get; set; }
         public Nullable<short> officeId { get; set; }
         public Nullable<short> productId { get; set; }
@@ -26,7 +29,9 @@ namespace _23092019_dotNet2.Models
         public Nullable<decimal> payment { get; set; }
         public Nullable<decimal> debt { get; set; }
         public Nullable<int> payMethod { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> createdTime { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
         public string updatedBy { get; set; }

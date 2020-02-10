@@ -19,6 +19,7 @@ namespace _23092019_dotNet2.Models
 
         public string password { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime dob { get; set; }
 
         public int departmentId { get; set; }

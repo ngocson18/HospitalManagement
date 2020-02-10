@@ -120,8 +120,14 @@
                                 <button class="w3-button w3-khaki w3-circle w3-teal">@Html.ActionLink("Sửa", "Edit", new { id = item.id })</button>
                                 <button class="w3-button  w3-circle w3-red">@Html.ActionLink("Xóa", "Delete", new { id = item.id })</button>
                                 <button class="w3-button  w3-circle w3-pink">@Html.ActionLink("Chi tiết", "Details", new { id = item.id })</button>
-                                <button class="w3-button  w3-circle w3-deep-purple">@Html.ActionLink("Tạo lịch hẹn", "", new { id = item.id })</button>
-                            </td>
+                               @* <button class="w3-button  w3-circle w3-deep-purple">@Html.ActionLink("Tạo lịch hẹn", "Create2", new { id = item.id })</button>*@
+                                <button class="w3-button  w3-circle w3-deep-purple">
+                                    <a href="~/tbl_CustomerBooking/Create">
+                                        Taọ lịch hẹn
+                                    </a>
+                                    </button>
+                               </td>
+                            @*</td>*@
                         </tr>
                     }
                 </table>

@@ -11,7 +11,8 @@ namespace _23092019_dotNet2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_Payment
     {
         public short id { get; set; }
@@ -23,9 +24,11 @@ namespace _23092019_dotNet2.Models
         public Nullable<decimal> paidFee { get; set; }
         public Nullable<decimal> debtFee { get; set; }
         public Nullable<short> billId { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> payTime { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<int> paymentType { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public Nullable<System.DateTime> createdTime { get; set; }
         public Nullable<System.DateTime> updatedTime { get; set; }
         public string createdBy { get; set; }
