@@ -43,7 +43,14 @@
                     Giới tính
                 </div>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.gender, new { htmlAttributes = new { @class = "form-control" } })
+                    @*@Html.EditorFor(model => model.gender, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownListFor(model => model.gender, new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "Nam", Value = "1", Selected=true},
+                                new SelectListItem { Text = "Nữ", Value = "0"},
+                                new SelectListItem { Text = "LGBT", Value = "3"}
+                            }, "Chọn giới tính",
+                            new { style = "width: 100%; height: 44px; border: none" })
                     @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
                 </div>
             </div>

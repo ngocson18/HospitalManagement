@@ -94,10 +94,12 @@
                                 @Html.DisplayFor(modelItem => item.serviceUnitName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.bookingDate)
+                                @*@Html.DisplayFor(modelItem => item.bookingDate)*@
+                                @Convert.ToDateTime(item.bookingDate).ToString("dd/MM/yyyy")
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.comingDate)
+                                @*@Html.DisplayFor(modelItem => item.comingDate)*@
+                                @Convert.ToDateTime(item.comingDate).ToString("dd/MM/yyyy")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.doctor)
