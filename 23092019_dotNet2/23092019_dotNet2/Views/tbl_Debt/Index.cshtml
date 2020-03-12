@@ -77,10 +77,19 @@
                                 @Html.DisplayFor(modelItem => item.paidFee)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.debtFee)
+                                @(item.totalFee - item.paidFee)
+                                @*@Html.DisplayFor(modelItem => item.debtFee)*@
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.paymentType)
+                                @if (item.paymentType == 1)
+                                {
+                                    <label>CK</label>
+                                }
+                                else if (item.paymentType == 2)
+                                {
+                                    <label>TM</label>
+                                }
+                                @*@Html.DisplayFor(modelItem => item.paymentType)*@
                             </td>
                             @*<td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.id }) |

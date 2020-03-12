@@ -50,7 +50,15 @@
                                 @Html.DisplayFor(modelItem => item.description)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.status)
+                                @if (item.status == 1)
+                                {
+                                    <label style="color: blue">Đang hoạt động</label>
+                                }
+                                else if (item.status == 0)
+                                {
+                                    <label style="color: red">Dừng hoạt động</label>
+                                }
+                                @*@Html.DisplayFor(modelItem => item.status)*@
                             </td>
                             <td>
                                 <button class="w3-button w3-khaki w3-circle w3-teal">@Html.ActionLink("Sửa", "Edit", new { id = item.id })</button>

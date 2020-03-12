@@ -129,8 +129,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\tbl_CustomerBookingController.cs" />
     <Compile Include="Controllers\tbl_CustomerController.cs" />
     <Compile Include="Controllers\tbl_DebtController.cs" />
@@ -3473,10 +3473,6 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
-    <Content Include="Views\Products\CategoryProducts.cshtml" />
-    <Content Include="Views\Products\ProductsList.cshtml" />
-    <Content Include="Views\Products\BuyProducts.cshtml" />
-    <Content Include="Views\Products\SellProducts.cshtml" />
     <Content Include="Views\Revenue\Report.cshtml" />
     <Content Include="Views\tbl_Group\Create.cshtml" />
     <Content Include="Views\tbl_Group\Delete.cshtml" />
@@ -3569,6 +3565,8 @@
     <Content Include="Views\tbl_CustomerBooking\Details.cshtml" />
     <Content Include="Views\tbl_CustomerBooking\Edit.cshtml" />
     <Content Include="Views\tbl_CustomerBooking\Index2.cshtml" />
+    <Content Include="Views\Count.cshtml" />
+    <Content Include="Views\_Count.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

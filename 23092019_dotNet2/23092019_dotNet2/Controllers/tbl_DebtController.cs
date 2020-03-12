@@ -33,7 +33,7 @@ namespace _23092019_dotNet2.Controllers
             // 4.1 Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
             // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
             int pageNumber = (page ?? 1);
-            var tbl_Payment = db.tbl_Payment.Where(t => t.debtFee > 0).Include(t => t.tbl_MedicalBill).OrderBy(x => x.id);
+            var tbl_Payment = db.tbl_Payment.Where(t => t.debtFee != 0).Include(t => t.tbl_MedicalBill).OrderBy(x => x.id);
             //return View(tbl_Payment.ToList());
             return View(tbl_Payment.ToPagedList(pageNumber, pageSize));
         }

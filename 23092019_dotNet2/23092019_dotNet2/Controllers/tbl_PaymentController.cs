@@ -92,6 +92,8 @@ namespace _23092019_dotNet2.Controllers
                 return HttpNotFound();
             }
             ViewBag.billId = new SelectList(db.tbl_MedicalBill, "id", "billCode", tbl_Payment.billId);
+            //int total = db.tbl_Payment['totalfee'];
+            //ViewBag.de = tbl_Payment[totalFee] - tbl_Payment['paidFee'];
             return View(tbl_Payment);
         }
 

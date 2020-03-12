@@ -66,7 +66,7 @@ namespace _23092019_dotNet2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,productCode,productName,productCategoryId,productCategoryName,urlImage,priceOne,priceIn,priceOut,quantity,status,supplier,importDate,VAT,createdTime,updatedTime,createdBy,updatedBy")] tbl_Product tbl_Product)
+        public ActionResult Create([Bind(Include = "id,productCode,productName,productCategoryId,urlImage,priceOne,priceIn,priceOut,quantity,status,supplier,importDate,VAT,createdTime,updatedTime,createdBy,updatedBy")] tbl_Product tbl_Product)
         {
             if (ModelState.IsValid)
             {

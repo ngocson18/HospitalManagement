@@ -13,6 +13,7 @@ namespace _23092019_dotNet2.Controllers
 {
     public class HomeController : Controller
     {
+        private DB_Hospital db = new DB_Hospital();
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
@@ -21,6 +22,16 @@ namespace _23092019_dotNet2.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            int count_all_customer = db.tbl_Customer.Count();
+            int count_treatment = db.tbl_Customer.Where(c => c.status == 3).Count();
+            int count_done = db.tbl_Customer.Where(c => c.status == 4).Count();
+            int count_miss = db.tbl_Customer.Where(c => c.status == 2).Count();
+            int count_debt = db.tbl_Payment.Where(c => c.debtFee == 0).Count();
+            ViewBag.all_customer = count_all_customer;
+            ViewBag.treatment = count_treatment;
+            ViewBag.done = count_done;
+            ViewBag.miss = count_miss;
+            ViewBag.debt = count_debt;
             return View(); 
         }
 
