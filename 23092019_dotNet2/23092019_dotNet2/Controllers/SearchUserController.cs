@@ -4,60 +4,31 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using PagedList;
 using System.Web;
 using System.Web.Mvc;
 using _23092019_dotNet2.Models;
 
 namespace _23092019_dotNet2.Controllers
 {
-    public class tbl_UserController : Controller
+    public class SearchUserController : Controller
     {
         private DB_Hospital db = new DB_Hospital();
 
-        // GET: tbl_User
-        public ActionResult Index(int? page)
-        {
-            // 1. Tham số int? dùng để thể hiện null và kiểu int
-            // page có thể có giá trị là null và kiểu int.
-
-            // 2. Nếu page = null thì đặt lại là 1.
-            if (page == null) page = 1;
-
-            // 3. Tạo truy vấn, lưu ý phải sắp xếp theo trường nào đó, ví dụ OrderBy
-            // theo id mới có thể phân trang.
-
-
-            // 4. Tạo kích thước trang (pageSize) hay là số Link hiển thị trên 1 trang
-            int pageSize = 3;
-
-            // 4.1 Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
-            // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
-            int pageNumber = (page ?? 1);
-            //var tbl_User = db.tbl_User.Include(t => t.tbl_Group).Include(t => t.tbl_Group1);
-            var tbl_User = db.tbl_User.Include(t => t.tbl_Group).Include(t => t.tbl_Group1).OrderBy(x => x.id);
-            //return View(tbl_User.ToList());
-            return View(tbl_User.ToPagedList(pageNumber, pageSize));
-        }
-
-        [HttpPost]
+        // GET: SearchUser
         public ActionResult Index(string searchString)
         {
-            //if (page == null) page = 1;
-            //int pageSize = 300;
-            //int pageNumber = (page ?? 1);
-            var links = from l in db.tbl_User
+            var links = from l in db.tbl_User // lấy toàn bộ liên kết
                         select l;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
             {
-                links = links.Where(s => s.name.Contains(searchString));
+                links = links.Where(s => s.name.Contains(searchString)); //lọc theo chuỗi tìm kiếm
             }
 
-            return View(links);
+            return View(links); //trả về kết quả
         }
 
-        // GET: tbl_User/Details/5
+        // GET: SearchUser/Details/5
         public ActionResult Details(short? id)
         {
             if (id == null)
@@ -72,7 +43,7 @@ namespace _23092019_dotNet2.Controllers
             return View(tbl_User);
         }
 
-        // GET: tbl_User/Create
+        // GET: SearchUser/Create
         public ActionResult Create()
         {
             ViewBag.departmentId = new SelectList(db.tbl_Group, "id", "name");
@@ -80,7 +51,7 @@ namespace _23092019_dotNet2.Controllers
             return View();
         }
 
-        // POST: tbl_User/Create
+        // POST: SearchUser/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -99,7 +70,7 @@ namespace _23092019_dotNet2.Controllers
             return View(tbl_User);
         }
 
-        // GET: tbl_User/Edit/5
+        // GET: SearchUser/Edit/5
         public ActionResult Edit(short? id)
         {
             if (id == null)
@@ -116,7 +87,7 @@ namespace _23092019_dotNet2.Controllers
             return View(tbl_User);
         }
 
-        // POST: tbl_User/Edit/5
+        // POST: SearchUser/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -134,7 +105,7 @@ namespace _23092019_dotNet2.Controllers
             return View(tbl_User);
         }
 
-        // GET: tbl_User/Delete/5
+        // GET: SearchUser/Delete/5
         public ActionResult Delete(short? id)
         {
             if (id == null)
@@ -149,7 +120,7 @@ namespace _23092019_dotNet2.Controllers
             return View(tbl_User);
         }
 
-        // POST: tbl_User/Delete/5
+        // POST: SearchUser/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(short id)

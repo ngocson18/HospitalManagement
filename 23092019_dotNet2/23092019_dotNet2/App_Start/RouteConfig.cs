@@ -144,6 +144,12 @@ namespace _23092019_dotNet2
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "tbl_ExportProduct", action = "Index", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+               name: "Search",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "tbl_User", action = "Search", id = UrlParameter.Optional }
+           );
         }
     }
 }

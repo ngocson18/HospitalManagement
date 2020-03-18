@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <div class="row">
+        @*<div class="row">
             <div class="form-group col-6">
                 <div class="control-label col-md-12">
                     Tên người dùng
@@ -86,9 +86,9 @@
                     @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
+        </div>*@
         
-        <div class="row">
+        @*<div class="row">
             <div class="form-group col-6">
                 <div class="control-label col-md-12">
                     Ảnh đại diện
@@ -108,10 +108,10 @@
                     @Html.ValidationMessageFor(model => model.facebook, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
+        </div>*@
         
         
-        <div class="row">
+        @*<div class="row">
             <div class="form-group col-6">
                 <div class="control-label col-md-12">
                     CustomerType
@@ -131,7 +131,7 @@
                     @Html.ValidationMessageFor(model => model.serviceUnitId, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
+        </div>*@
 
         <div class="row">
             <div class="form-group col-6">
@@ -146,11 +146,20 @@
 
             <div class="form-group col-6">
                 <div class="control-label col-md-12">
-                    Quantity
+                    Trạng thái
                 </div>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
+                <div class="col-md-12">
+                    @*@Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownListFor(model => model.status, new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "Mới", Value = "0", Selected=true},
+                                new SelectListItem { Text = "Hẹn khám", Value = "1"},
+                                new SelectListItem { Text = "Lỡ hẹn", Value = "2"},
+                                new SelectListItem { Text = "Điều trị", Value = "3"},
+                                new SelectListItem { Text = "Đã khám", Value = "4"},
+                            }, "Đang chờ",
+                            new { style = "width: 40%; height: 44px; border: none" })
+                    @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

@@ -14,7 +14,13 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search">
                         <div class="input-group-btn">
-                            <button class="btn btn-secondary"><i class="ion ion-search"></i></button>
+                            @*<button class="btn btn-secondary"><i class="ion ion-search"></i></button>*@
+                            @using (Html.BeginForm("Index", "tbl_User", FormMethod.Post)) // -- phần thay đổi
+                            {
+                                <p>
+                                    Title: @Html.TextBox("SearchString") <input type="submit" value="Tìm kiếm" />
+                                </p>
+                            }
                         </div>
                     </div>
                 </form>
