@@ -1,2 +1,2 @@
-# 20092019_BTL
-Bài tập lớn .Net 2
+# Hospital_Management
+Quản lý bệnh viện
